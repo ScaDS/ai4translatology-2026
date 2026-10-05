@@ -1,0 +1,30 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+
+parts:
+  - caption: Preparation
+    chapters:
+    - file: setup.md
+    
+  - caption: Exercises for non-coders
+    chapters:
+    - file: translate_speech.md
+    - file: word-cloud-chat.md
+
+  - caption: Exercises for coders seeking AI-assitance
+    chapters:
+    - file: word-cloud.jpynb
+      sections:
+      - file: word-cloud-solution.jpynb
+    
+  - caption: Links
+    chapters:
+    - url: https://doi.org/10.5281/zenodo.18879906 
+      title: Slides
+    - url: https://creativecommons.org/licenses/by/4.0/
+      title: License CC-BY 4.0
+    - file: imprint
+
