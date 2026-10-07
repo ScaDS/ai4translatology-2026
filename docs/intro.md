@@ -10,6 +10,8 @@ The notebooks are written for scientists with interests in processing text data 
 
 In general, you can go through the exercises provided in the left navigation panel of this page. 
 
+For the low-code workshop, choose between **Langflow**, a visual agent builder, and the optional **Obsidian + Copilot** knowledge-workspace track. You can prepare both and take the second track home. See [Preparing the session](setup.md) for the choice of tools and [the Obsidian exercises](obsidian-workshop.md) for everyday work, a source-based wiki and terminology-aware translation.
+
 ## Advanced use (optional)
 
 For the Python programmers among the attendees, please make sure to install Python and some libraries as explained [on this page](setup.md). 
