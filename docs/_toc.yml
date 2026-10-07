@@ -16,9 +16,9 @@ parts:
     chapters:
     - file: translate_speech.md
     - file: word-cloud-chat.md
+    - file: technical-text-translation.md
     - file: langflow-workshop.md
     - file: obsidian-workshop.md
-    - file: technical-text-translation.md
 
   - caption: Exercises for coders seeking AI-assistance
     chapters:
