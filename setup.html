@@ -232,9 +232,9 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="translate_speech.html">Translating a speech</a></li>
 <li class="toctree-l1"><a class="reference internal" href="word-cloud-chat.html">Word clouds for Non-Programmers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="technical-text-translation.html">Translating technical texts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="langflow-workshop.html">Langflow: build your own team of helpers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="obsidian-workshop.html">Obsidian + Copilot: a translator’s knowledge workspace</a></li>
-<li class="toctree-l1"><a class="reference internal" href="technical-text-translation.html">Translating technical texts</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Exercises for coders seeking AI-assistance</span></p>
 <ul class="nav bd-sidenav">
@@ -441,12 +441,10 @@
             <nav aria-label="Page">
                 <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-your-computer">Setting up your computer</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#choose-your-low-code-track">Choose your low-code track</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#langflow-visual-translation-workflows-and-multi-agent-systems">Langflow: visual translation workflows and multi-agent systems</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#obsidian-copilot-a-translator-s-knowledge-workspace-optional">Obsidian + Copilot: a translator’s knowledge workspace (optional)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#local-language-models">Local language models</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-setup-for-exercises-about-structuring-knowledge-optional">Advanced setup for exercises about structuring knowledge <strong>(optional)</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-setup-for-attendees-interested-in-ai-assisted-code-generation-for-text-analysis-optional">Basic setup for attendees interested in AI-assisted code generation for text analysis <strong>(optional)</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-setup-for-attendees-interested-in-ai-assisted-code-generation-for-text-analysis-optional">Advanced setup for attendees interested in AI-assisted code generation for text analysis <strong>(optional)</strong></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-install-mini-forge">Step 1: Install Mini-forge</a></li>
@@ -483,39 +481,6 @@
 </ul>
 <section id="setting-up-your-computer">
 <h2>Setting up your computer<a class="headerlink" href="#setting-up-your-computer" title="Link to this heading">#</a></h2>
-<section id="choose-your-low-code-track">
-<h3>Choose your low-code track<a class="headerlink" href="#choose-your-low-code-track" title="Link to this heading">#</a></h3>
-<p>Choose one track to work on during the session:</p>
-<div class="pst-scrollable-table-container"><table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p>Track</p></th>
-<th class="head"><p>What you will explore</p></th>
-<th class="head"><p>Preparation</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p><strong>Langflow: agent-builder UI</strong></p></td>
-<td><p>Build and inspect translation workflows and collaborating agents on a visual canvas.</p></td>
-<td><p><a class="reference internal" href="langflow-setup.html"><span class="std std-doc">Preparing Langflow</span></a></p></td>
-</tr>
-<tr class="row-odd"><td><p><strong>Obsidian + Copilot (optional)</strong></p></td>
-<td><p>Organise everyday work, build a source-based LLM wiki, and translate with a wording table and a small corpus.</p></td>
-<td><p><a class="reference internal" href="obsidian-setup.html"><span class="std std-doc">Preparing Obsidian</span></a></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>The tasks start small, but both tools can support much larger projects. You may prepare <strong>both</strong> tools, choose one during the session, and take the other track home. You do not need to complete both tracks during the workshop.</p>
-</section>
-<section id="langflow-visual-translation-workflows-and-multi-agent-systems">
-<h3>Langflow: visual translation workflows and multi-agent systems<a class="headerlink" href="#langflow-visual-translation-workflows-and-multi-agent-systems" title="Link to this heading">#</a></h3>
-<p>For the Langflow workshop, please follow <a class="reference internal" href="langflow-setup.html"><span class="std std-doc">Preparing Langflow</span></a> before the session. This provides setup and start scripts for <strong>Windows, macOS and Linux</strong>, using <code class="docutils literal notranslate"><span class="pre">uv</span></code>, Python 3.12 and Langflow 1.12.0. No separate Jupyter or local language model installation is needed for this part.</p>
-<p>The prepared flows include the workshop model access and will be supplied through the <a class="reference external" href="https://cloud.scadsai.uni-leipzig.de/index.php/s/Egy8BGX4wAX4dXH">ScaDS.AI Nextcloud download</a>, <strong>valid until 31.12.2026</strong>. Import them once; subsequent starts use your local Langflow database and preserve your saved edits.</p>
-</section>
-<section id="obsidian-copilot-a-translator-s-knowledge-workspace-optional">
-<h3>Obsidian + Copilot: a translator’s knowledge workspace (optional)<a class="headerlink" href="#obsidian-copilot-a-translator-s-knowledge-workspace-optional" title="Link to this heading">#</a></h3>
-<p>Follow <a class="reference internal" href="obsidian-setup.html"><span class="std std-doc">Preparing Obsidian</span></a> to install Obsidian and open the workshop vault. The prepared vault and model-access information will be distributed through the same <strong>Nextcloud link, valid until 31.12.2026</strong>. Then follow <a class="reference internal" href="obsidian-workshop.html"><span class="std std-doc">the optional Obsidian exercises</span></a>, during the session or at home.</p>
-</section>
 <section id="local-language-models">
 <h3>Local language models<a class="headerlink" href="#local-language-models" title="Link to this heading">#</a></h3>
 <p>If you prefer using large language models on your laptop, please download and install one of these:</p>
@@ -524,6 +489,13 @@
 <li><p><a class="reference external" href="https://ollama.com/">Ollama</a> (open source, partially maintained by Meta, commercial service provider in the USA)</p></li>
 </ul>
 </section>
+</section>
+<section id="advanced-setup-for-exercises-about-structuring-knowledge-optional">
+<h2>Advanced setup for exercises about structuring knowledge <strong>(optional)</strong><a class="headerlink" href="#advanced-setup-for-exercises-about-structuring-knowledge-optional" title="Link to this heading">#</a></h2>
+<p>For the two exercises about structuring knowledge and agentic systems for searching knowledge bases, please go through the instructions:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="langflow-setup.html"><span class="std std-doc">Preparing Langflow</span></a> and <a class="reference internal" href="obsidian-setup.html"><span class="std std-doc">Preparing Obsidian</span></a> (optional).</p></li>
+</ul>
 </section>
 <section id="basic-setup-for-attendees-interested-in-ai-assisted-code-generation-for-text-analysis-optional">
 <h2>Basic setup for attendees interested in AI-assisted code generation for text analysis <strong>(optional)</strong><a class="headerlink" href="#basic-setup-for-attendees-interested-in-ai-assisted-code-generation-for-text-analysis-optional" title="Link to this heading">#</a></h2>
@@ -643,12 +615,10 @@ If everything is installed properly, it should look like this:</p>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-your-computer">Setting up your computer</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#choose-your-low-code-track">Choose your low-code track</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#langflow-visual-translation-workflows-and-multi-agent-systems">Langflow: visual translation workflows and multi-agent systems</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#obsidian-copilot-a-translator-s-knowledge-workspace-optional">Obsidian + Copilot: a translator’s knowledge workspace (optional)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#local-language-models">Local language models</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-setup-for-exercises-about-structuring-knowledge-optional">Advanced setup for exercises about structuring knowledge <strong>(optional)</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-setup-for-attendees-interested-in-ai-assisted-code-generation-for-text-analysis-optional">Basic setup for attendees interested in AI-assisted code generation for text analysis <strong>(optional)</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-setup-for-attendees-interested-in-ai-assisted-code-generation-for-text-analysis-optional">Advanced setup for attendees interested in AI-assisted code generation for text analysis <strong>(optional)</strong></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-install-mini-forge">Step 1: Install Mini-forge</a></li>
