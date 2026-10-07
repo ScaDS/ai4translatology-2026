@@ -5,3 +5,15 @@ temp*
 *.pyc
 .env
 Untitled*
+.venv/
+.langflow-data/
+docs/_build/
+workshop/releases/
+workshop/local/
+workshop/obsidian-vault/.obsidian/
+workshop/obsidian-vault/.copilot/
+workshop/obsidian-vault/copilot/
+workshop/obsidian-vault/.opencode/
+release/
+langflow-workshop.json
+scripts

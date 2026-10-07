@@ -8,11 +8,16 @@ parts:
   - caption: Preparation
     chapters:
     - file: setup.md
+      sections:
+      - file: langflow-setup.md
+      - file: obsidian-setup.md
     
   - caption: Exercises for non-coders
     chapters:
     - file: translate_speech.md
     - file: word-cloud-chat.md
+    - file: langflow-workshop.md
+    - file: obsidian-workshop.md
     - file: technical-text-translation.md
 
   - caption: Exercises for coders seeking AI-assistance
