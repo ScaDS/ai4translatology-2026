@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Translating a speech &#8212; AI4Translatology</title>
+    <title>Translating technical texts &#8212; AI4Translatology</title>
   
   
   
@@ -58,11 +58,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'translate_speech';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'technical-text-translation';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Word clouds for Non-Programmers" href="word-cloud-chat.html" />
-    <link rel="prev" title="Preparing the session" href="setup.html" />
+    <link rel="next" title="Word clouds for Python-Programmers" href="word-cloud.html" />
+    <link rel="prev" title="Word clouds for Non-Programmers" href="word-cloud-chat.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="docsearch:language" content="en">
   </head>
@@ -143,8 +143,8 @@ const thebe_selector_output = ".output, .cell_output"
                     </li>
                 
 
-                    <li class="nav-item current active">
-                      <a class="nav-link nav-internal" href="#">
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="translate_speech.html">
                         Translating a speech
                       </a>
                     </li>
@@ -157,8 +157,8 @@ const thebe_selector_output = ".output, .cell_output"
                     </li>
                 
 
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="technical-text-translation.html">
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="#">
                         Translating technical texts
                       </a>
                     </li>
@@ -276,8 +276,8 @@ const thebe_selector_output = ".output, .cell_output"
                     </li>
                 
 
-                    <li class="nav-item current active">
-                      <a class="nav-link nav-internal" href="#">
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="translate_speech.html">
                         Translating a speech
                       </a>
                     </li>
@@ -290,8 +290,8 @@ const thebe_selector_output = ".output, .cell_output"
                     </li>
                 
 
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="technical-text-translation.html">
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="#">
                         Translating technical texts
                       </a>
                     </li>
@@ -406,9 +406,9 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Exercises for non-coders</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Translating a speech</a></li>
+<li class="toctree-l1"><a class="reference internal" href="translate_speech.html">Translating a speech</a></li>
 <li class="toctree-l1"><a class="reference internal" href="word-cloud-chat.html">Word clouds for Non-Programmers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="technical-text-translation.html">Translating technical texts</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Translating technical texts</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Exercises for coders seeking AI-assistance</span></p>
 <ul class="nav bd-sidenav">
@@ -498,7 +498,7 @@ title="Source repository"
 </a>
 </a>
       
-      <li><a href="https://github.com/ScaDS/ai4translatoloy-2026/issues/new?title=Issue%20on%20page%20%2Ftranslate_speech.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/ScaDS/ai4translatoloy-2026/issues/new?title=Issue%20on%20page%20%2Ftechnical-text-translation.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm dropdown-item"
    data-toggle="tooltip"
 data-placement="left"
@@ -523,7 +523,7 @@ title="Open an issue"
     <i class="fas fa-download"></i>
   </button>
   <ul class="dropdown-menu">
-      <li><a href="_sources/translate_speech.md" target="_blank"
+      <li><a href="_sources/technical-text-translation.md" target="_blank"
    class="btn btn-sm dropdown-item"
    data-toggle="tooltip"
 data-placement="left"
@@ -566,7 +566,7 @@ title="Print to PDF"
             
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Translating a speech</h1>
+    <h1>Translating technical texts</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -577,8 +577,13 @@ title="Print to PDF"
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#discussion">
-   Discussion
+  <a class="reference internal nav-link" href="#exericse">
+   Exericse
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#discussion-points">
+   Discussion points
   </a>
  </li>
 </ul>
@@ -590,37 +595,44 @@ title="Print to PDF"
 
             <article class="bd-article" role="main">
               
-  <section class="tex2jax_ignore mathjax_ignore" id="translating-a-speech">
-<h1>Translating a speech<a class="headerlink" href="#translating-a-speech" title="Permalink to this heading">#</a></h1>
-<p>In this exercise, we will use an AI-Chat System of your choice to translate a speech. Login to one of these AI systems:</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="translating-technical-texts">
+<h1>Translating technical texts<a class="headerlink" href="#translating-technical-texts" title="Permalink to this heading">#</a></h1>
+<p>When translating technical texts containing domain specific terms, LLMs often fail to translate terms accurately or create new words in the target language.
+For such scenarios it may make sense to create translation tables. LLMs can be used to <a class="reference external" href="https://en.wikipedia.org/wiki/Knowledge_distillation">distill</a> such tables from existing texts.</p>
+<section id="exericse">
+<h2>Exericse<a class="headerlink" href="#exericse" title="Permalink to this heading">#</a></h2>
+<p>Copy &amp; paste a technical text (<a class="reference download internal" download="" href="_downloads/805fcdd85a4f2d8805f7d260364a10c2/bioimageanalysis_en.txt"><span class="xref download myst">example</span></a>) into a Chat-AI system of your choice. Consider working in a group and comparing different Chat-AI systems.</p>
+<p>First, prompt it to translate the text and see if it has issues translating technical terms.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Translate</span> <span class="n">the</span> <span class="n">following</span> <span class="n">text</span> <span class="n">to</span> <span class="n">German</span><span class="p">:</span>
+
+<span class="o">&lt;</span><span class="n">text</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>Then, distill a translation table.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Extract</span> <span class="n">technical</span> <span class="n">terms</span> <span class="kn">from</span><span class="w"> </span><span class="nn">the</span> <span class="n">following</span> <span class="n">text</span> <span class="ow">and</span> <span class="n">note</span> <span class="n">German</span> <span class="n">translations</span><span class="o">.</span>
+
+<span class="o">&lt;</span><span class="n">text</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>Store the result in a .txt file or in a .csv file (<a class="reference download internal" download="" href="_downloads/4b8501f138e3c785405ec65b55c738d2/bia_translations.csv"><span class="xref download myst">example</span></a>). Curate this file manually: correct or remove wrong tranlations, add additional words (<a class="reference download internal" download="" href="_downloads/391692e418febb80d82aa756b1bb51bd/bia_translations_curated.csv"><span class="xref download myst">example</span></a>).</p>
+<p>Prompt the system again to translate the original text, but this time, provide the translation table as well:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Translate</span> <span class="n">this</span> <span class="n">text</span> <span class="n">to</span> <span class="n">German</span><span class="o">.</span> <span class="n">For</span> <span class="n">technical</span> <span class="n">terms</span> <span class="n">you</span> <span class="n">must</span> <span class="n">use</span> <span class="n">the</span> <span class="n">given</span> <span class="n">translation</span> <span class="n">table</span><span class="o">.</span>
+
+<span class="o">&lt;</span><span class="n">text</span><span class="o">&gt;</span>
+
+<span class="n">Translation</span> <span class="n">table</span> 
+
+<span class="o">&lt;</span><span class="n">table</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="discussion-points">
+<h2>Discussion points<a class="headerlink" href="#discussion-points" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
-<li><p><a class="reference external" href="https://blablador.fz-juelich.de/">Blablador</a> (Helmholtz, free for members of German Academic institutions)</p></li>
-<li><p><a class="reference external" href="https://chat-ai.academiccloud.de/">ChatAI der Academic Cloud</a> (KISSKI/GWDG Göttingen, free for members of German Academic institutions)</p></li>
-<li><p><a class="reference external" href="https://scite.ai/">Scite.AI</a> (Commercial service provider in the USA)</p></li>
-<li><p><a class="reference external" href="https://chat.mistral.ai/chat">Mistral</a> (Commercial service provider in France)</p></li>
-<li><p><a class="reference external" href="https://lumo.proton.me/">Lumo</a> (Commercial service provider in Switzerland)</p></li>
-<li><p><a class="reference external" href="https://claude.ai/">Claude</a> (Commercial service provider in the USA)</p></li>
-<li><p><a class="reference external" href="https://gemini.google.com/">Gemini</a> (Commercial service provider in the USA)</p></li>
-<li><p><a class="reference external" href="https://chatgpt.com/">ChatGPT</a> (Commercial service provider in the USA)</p></li>
-<li><p><a class="reference external" href="https://you.com/ari">You.com</a> (Commercial service provider in the USA)</p></li>
-<li><p><a class="reference external" href="https://www.perplexity.ai/">Perplexity</a> (Commercial service provider in the USA)</p></li>
+<li><p>Is the second translation better than the first?</p></li>
+<li><p>Does this work with all tested AI-systems?</p></li>
+<li><p>Does your domain community already have such a translation table?</p></li>
 </ul>
-<p>Alternatively, use one of these solutions on your local computers:</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://www.jan.ai/">Jan.AI</a> (open source, partially maintained by Menlo AI, commercial service provider in the USA)</p></li>
-<li><p><a class="reference external" href="https://ollama.com/">Ollama</a> (open source, partially maintained by Meta, commercial service provider in the USA)</p></li>
-<li><p><a class="reference external" href="https://claude.com/download">Claude Desktop</a> (by Anthropic, commercial service provider in the USA)</p></li>
-</ul>
-<p>Open <a class="reference download internal" download="" href="_downloads/61e92ad05812e12e91ac2c23d881608a/speech-translation-prompt.docx"><span class="xref download myst">speech-translation-prompt.docx</span></a> and copy&amp;paste the given prompt into your chosen Chat-App.</p>
-<p>Modify the prompt, e.g.</p>
-<ul class="simple">
-<li><p>Change the target language.</p></li>
-<li><p>Change the target audience (e.g. children)</p></li>
-</ul>
-<section id="discussion">
-<h2>Discussion<a class="headerlink" href="#discussion" title="Permalink to this heading">#</a></h2>
-<p>Compare in your group how similar translatation are, e.g. between different AI-systems, but also if you translate the same text twice using the same system.
-Discuss in your group advantages and disadvantages of the used technology. Think of privacy, sovereignity, comfortabilitiy, costs and speed of the solutions you tested.</p>
 </section>
 </section>
 
@@ -652,17 +664,17 @@ Discuss in your group advantages and disadvantages of the used technology. Think
             <footer class="bd-footer-article">
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-  <a class='left-prev' id="prev-link" href="setup.html" title="previous page">
+  <a class='left-prev' id="prev-link" href="word-cloud-chat.html" title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
           <p class="prev-next-subtitle">previous</p>
-          <p class="prev-next-title">Preparing the session</p>
+          <p class="prev-next-title">Word clouds for Non-Programmers</p>
       </div>
   </a>
-  <a class='right-next' id="next-link" href="word-cloud-chat.html" title="next page">
+  <a class='right-next' id="next-link" href="word-cloud.html" title="next page">
   <div class="prev-next-info">
       <p class="prev-next-subtitle">next</p>
-      <p class="prev-next-title">Word clouds for Non-Programmers</p>
+      <p class="prev-next-title">Word clouds for Python-Programmers</p>
   </div>
   <i class="fa-solid fa-angle-right"></i>
   </a>
@@ -683,8 +695,13 @@ Discuss in your group advantages and disadvantages of the used technology. Think
 <nav id="bd-toc-nav" class="page-toc">
     <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#discussion">
-   Discussion
+  <a class="reference internal nav-link" href="#exericse">
+   Exericse
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#discussion-points">
+   Discussion points
   </a>
  </li>
 </ul>
