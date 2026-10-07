@@ -13,12 +13,13 @@ parts:
     chapters:
     - file: translate_speech.md
     - file: word-cloud-chat.md
+    - file: technical-text-translation.md
 
-  - caption: Exercises for coders seeking AI-assitance
+  - caption: Exercises for coders seeking AI-assistance
     chapters:
-    - file: word-cloud.jpynb
+    - file: word-cloud.ipynb
       sections:
-      - file: word-cloud-solution.jpynb
+      - file: word-cloud-solution.ipynb
     
   - caption: Links
     chapters:

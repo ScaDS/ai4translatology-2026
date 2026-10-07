@@ -1,0 +1,23 @@
+English Term,Closest Possible German Translation
+Microscopy,Mikroskopie
+Bio Image Analysis,Bio Image Analysis
+Preprocessing,Vorbearbeitung
+Segmentation,Segmentierung
+Feature Extraction,Merkmalsextraktion
+Classification,Klassifikation
+Image Registration,Bildregistrierung
+Non-rigid Registration,Nicht-rigide Registrierung
+Deep Learning Architectures,Deep-Learning Architekturen
+Cytoskeletal Organization,Zytoplastische Organisation or Zytoskelettorganisation
+Spatiotemporal Trajectories,Raumzeitliche Veränderungen
+Phenotyping,Phänotypisierung
+Multi-modal Imaging,Multimodale Bildgebung
+Cross-modal Alignment Algorithms,Modalitätsübergreifende Registrierungsalgorithmen
+Quantitative Metrics,Quantitative Kennwerte
+Automated Phenotyping,Automatisierte Phäotypisierung
+Reproducibility,Reproduzierbarkeit
+Pipeline Transparency,Nachvollziehbarkeit von Abläufen
+Standardization,Standardisierung
+Black-box Decision Making,Black-Box Entscheidungsfindung
+Cryo-electron Microscopy (cryoEM),Cryoelektronenmikroskopie
+DeepEM,DeepEM
