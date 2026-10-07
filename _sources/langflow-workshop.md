@@ -1,4 +1,4 @@
-# Langflow: build your own team of helpers
+# Delegate translation tasks to a team of AI helpers 
 
 **Low-code track · approximately 45–60 minutes · no programming required**
 
