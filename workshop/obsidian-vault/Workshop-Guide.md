@@ -1,6 +1,6 @@
 > Workshop guide generated from the Jupyter Book source. Your working notes and agent instructions are in this vault.
 
-# Obsidian + Copilot: a translator's knowledge workspace
+# Structure, search and reuse your translation knowledge
 
 **Optional track · approximately 45–60 minutes · no coding required**
 
