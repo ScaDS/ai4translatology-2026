@@ -22,23 +22,24 @@ If you prefer using large language models on your laptop, please download and in
 * [Jan.AI](https://www.jan.ai/) (open source, partially maintained by Menlo AI, commercial service provider in the USA)
 * [Ollama](https://ollama.com/) (open source, partially maintained by Meta, commercial service provider in the USA)
 
-## Advanced setup for exercises about structuring knowledge **(optional)**
+### Advanced setup for exercises about structuring knowledge **(optional)**
 
 For the two exercises about structuring knowledge and agentic systems for searching knowledge bases, please go through the instructions:
-* [Preparing Langflow](langflow-setup.md) and [Preparing Obsidian](obsidian-setup.md) (optional).
+* [Preparing Langflow](langflow-setup.md) and
+* [Preparing Obsidian](obsidian-setup.md).
 
 
-## Basic setup for attendees interested in AI-assisted code generation for text analysis **(optional)**
+### Basic setup for attendees interested in AI-assisted code generation for text analysis **(optional)**
 
 Login to [Google Colab](https://colab.research.google.com/).
 
-## Advanced setup for attendees interested in AI-assisted code generation for text analysis **(optional)**
+### Advanced setup for attendees interested in AI-assisted code generation for text analysis **(optional)**
 
 If you want to use AI-assistance in [Jupyter Lab](https://jupyter.org/) on your own computer, make sure you have it installed together with Python and some libraries. 
 
 One way of doing this, is by managing *Conda* environments ([read more](https://focalplane.biologists.com/2022/12/08/managing-scientific-python-environments-using-conda-mamba-and-friends/)
 
-### Step 1: Install Mini-forge
+#### Step 1: Install Mini-forge
 Download and install Conda. We recommend the Conda distribution [mini-forge](https://conda-forge.org/download/).
 
 For ease-of-use, it is recommended to install it for your use only and to add Conda to the PATH variable during installation.
@@ -47,7 +48,7 @@ For ease-of-use, it is recommended to install it for your use only and to add Co
 
 ![img.png](images/miniforge2.png)
 
-### Step 2: Install Python and libraries
+#### Step 2: Install Python and libraries
 
 After Conda installation finished, use this command from the terminal:
 
@@ -66,7 +67,7 @@ Install the libraries we plan to use during the training:
 pip install bia-bob python-dotenv numpy scipy pandas scikit-learn scikit-image jupyterlab wordcloud
 ```
 
-### Step 3: Testing the installation
+#### Step 3: Testing the installation
 
 Whenever you want to work on the same project, you should start a command line and enter this:
 
