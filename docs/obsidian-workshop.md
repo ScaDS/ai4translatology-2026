@@ -1,4 +1,4 @@
-# Obsidian + Copilot: a translator's knowledge workspace
+# Structure, search and reuse your translation knowledge 
 
 **Optional track · approximately 45–60 minutes · no coding required**
 
