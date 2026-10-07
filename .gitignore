@@ -17,3 +17,4 @@ workshop/obsidian-vault/.opencode/
 release/
 langflow-workshop.json
 scripts
+/workshop/**/*.zip
