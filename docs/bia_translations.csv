@@ -1,0 +1,25 @@
+English Term,Closest Possible German Translation
+Microscopy,Mikroskopie
+BioImage Analysis,"Biomolekularer Bildanalyse or Biologische Bildanalyse (Note: No perfect equivalent; ""biological image analysis"" is standard)"
+Preprocessing,Vorbearbeitung
+Segmentation,Segmentierung
+Feature Extraction,Merkmalsextraktion
+Classification,Klassifikation
+Image Registration,Bildregistrierung
+Non-rigid Registration,"Nicht-strappe Registrierung (Note: Commonly referred to as ""non-rigid"" in German literature)"
+Deep Learning Architectures,"Tiefes Lernen-Architekturen (e.g., U-Net​, Mask R-CNN​)"
+Cytoskeletal Organization,Zytoplastische Organisation or Zytoskelettorganisation
+Spatiotemporal Trajectories,Raumzeitliche Spurverläufe
+Phenotyping,Phänotypierung
+Multi-modal Imaging,Multimodale Bildgebung
+Cross-modal Alignment Algorithms,Intermodaler Ausrichtungsalgorithmus or Korrelationsalgorithmen zwischen Modellen
+Quantitative Metrics,Quantitative Kennwerte
+Automated Phenotyping,Automatisierte Phänotypierung
+Data Reproducibility,"Datensicherheit / Datenerneuerbarkeit (Best fit: ""Reproduzierbarkeit"")"
+Pipeline Transparency,Routen-Transparenz (Technical term; often called “transparent pipeline”)
+Standardization,Standardisierung
+Black-box Decision Making,Schwarz-Kasten-Entscheidungsfindung (Common expression)
+Attention Mechanisms / Saliency Maps,Achtungsmuster / Salienzkarten
+Quantum Sensing,Quanten-Sensoren
+Cryo-electron Microscopy (cryoEM),Kryoelektronenmikroskopie
+DeepEM,DeepEM (Kombination aus „Deep“ + „EM“) – often written as is in German tech contexts

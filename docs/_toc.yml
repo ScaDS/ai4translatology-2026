@@ -18,8 +18,9 @@ parts:
     - file: word-cloud-chat.md
     - file: langflow-workshop.md
     - file: obsidian-workshop.md
+    - file: technical-text-translation.md
 
-  - caption: Exercises for coders seeking AI-assitance
+  - caption: Exercises for coders seeking AI-assistance
     chapters:
     - file: word-cloud.ipynb
       sections:
@@ -27,8 +28,8 @@ parts:
     
   - caption: Links
     chapters:
-    - url: https://doi.org/10.5281/zenodo.18879906 
-      title: Slides
+    #- url: https://doi.org/10.5281/zenodo.18879906 
+    #  title: Slides
     - url: https://creativecommons.org/licenses/by/4.0/
       title: License CC-BY 4.0
     - file: imprint
