@@ -30,7 +30,7 @@ The key must be entered once on each computer and expires after the workshop.
 
 Open `01-Projects/Project-Brief.md`. In the command palette (**Ctrl+P** on
 Windows/Linux, **Cmd+P** on macOS), select **Open Copilot Chat Window**.
-Use the prepared workshop model in **Chat** mode.
+Use the prepared workshop model in **Chat** mode. Select the respective LLM in the copilot!
 
 Attach **Project-Brief** using **`@`** or **Add context (+)**, check its context
 badge, and send:
