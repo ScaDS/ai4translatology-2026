@@ -1,0 +1,810 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Preparing Langflow &#8212; AI4Translatology</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=b8b12719"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'langflow-setup';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Preparing Obsidian (optional)" href="obsidian-setup.html" />
+    <link rel="prev" title="Preparing the session" href="setup.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+    <meta name="docbuild:last-update" content="2026-10-07"/>
+  
+    
+    <script src="_static/searchtools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="AI4Translatology - Home"/>
+    <img src="_static/logo.png" class="logo__image only-dark pst-js-only" alt="AI4Translatology - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    AI4Translatology
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Preparation</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="setup.html">Preparing the session</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Preparing Langflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="obsidian-setup.html">Preparing Obsidian (optional)</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Exercises for non-coders</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="translate_speech.html">Translating a speech</a></li>
+<li class="toctree-l1"><a class="reference internal" href="word-cloud-chat.html">Word clouds for Non-Programmers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="langflow-workshop.html">Langflow: build your own team of helpers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="obsidian-workshop.html">Obsidian + Copilot: a translator’s knowledge workspace</a></li>
+<li class="toctree-l1"><a class="reference internal" href="technical-text-translation.html">Translating technical texts</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Exercises for coders seeking AI-assistance</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="word-cloud.html">Word clouds for Python-Programmers</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="word-cloud-solution.html">(Solution) Word clouds for Python-Programmers</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Links</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference external" href="https://creativecommons.org/licenses/by/4.0/">License CC-BY 4.0</a></li>
+<li class="toctree-l1"><a class="reference internal" href="imprint.html">Imprint</a></li>
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/ScaDS/ai4translatology-2026" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/ScaDS/ai4translatology-2026/issues/new?title=Issue%20on%20page%20%2Flangflow-setup.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/langflow-setup.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Preparing Langflow</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-uv">1. Install uv</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#windows">Windows</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#macos-linux">macOS / Linux</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#download-the-setup-scripts">2. Download the setup scripts</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-langflow-once">3. Install Langflow (once)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Windows</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">macOS / Linux</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#first-start-and-workshop-import">4. First start and workshop import</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Windows</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">macOS / Linux</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#download-and-import-the-workshop-flows">Download and import the workshop flows</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#starting-again-on-another-day">5. Starting again on another day</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#troubleshooting">Troubleshooting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preparation-checklist">Preparation checklist</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="preparing-langflow">
+<h1>Preparing Langflow<a class="headerlink" href="#preparing-langflow" title="Link to this heading">#</a></h1>
+<p>We will use <strong>Langflow</strong> to build translation workflows and teams of specialised AI agents in a visual editor. The editor runs on your computer and opens in your browser; the language model runs on the <a class="reference external" href="http://ScaDS.AI">ScaDS.AI</a> service.</p>
+<p>Please complete the installation before the workshop. You need an internet connection, a browser, and permission to install software on Windows, macOS or Linux. No programming experience, Git, Conda, Jupyter or local language model installation is required for this part.</p>
+<p>The workshop setup uses <strong>Python 3.12 and Langflow 1.12.0</strong>, in a separate environment. Please use this version so that the interface matches the workshop materials. The scripts also pin <code class="docutils literal notranslate"><span class="pre">langflow-base</span></code>, which supplies the application itself. Other dependencies are resolved by <code class="docutils literal notranslate"><span class="pre">uv</span></code> during installation.</p>
+<section id="install-uv">
+<h2>1. Install uv<a class="headerlink" href="#install-uv" title="Link to this heading">#</a></h2>
+<p><a class="reference external" href="https://docs.astral.sh/uv/getting-started/installation/">uv</a> installs Python and Langflow for you.</p>
+<section id="windows">
+<h3>Windows<a class="headerlink" href="#windows" title="Link to this heading">#</a></h3>
+<p>Open <strong>PowerShell</strong> from the Start menu and run:</p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">powershell</span> <span class="n">-ExecutionPolicy</span> <span class="n">ByPass</span> <span class="n">-c</span> <span class="s2">"irm https://astral.sh/uv/install.ps1 | iex"</span>
+</pre></div>
+</div>
+</section>
+<section id="macos-linux">
+<h3>macOS / Linux<a class="headerlink" href="#macos-linux" title="Link to this heading">#</a></h3>
+<p>Open <strong>Terminal</strong> and run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-LsSf<span class="w"> </span>https://astral.sh/uv/install.sh<span class="w"> </span><span class="p">|</span><span class="w"> </span>sh
+</pre></div>
+</div>
+<p>On all platforms, close and reopen your terminal afterwards, then check:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>uv --version
+</pre></div>
+</div>
+<p>You should see a version number. If the command is not found, follow the PATH instructions displayed by the installer.</p>
+</section>
+</section>
+<section id="download-the-setup-scripts">
+<h2>2. Download the setup scripts<a class="headerlink" href="#download-the-setup-scripts" title="Link to this heading">#</a></h2>
+<p>Create a folder named <code class="docutils literal notranslate"><span class="pre">ai4translatology-langflow</span></code>, for example in your home folder. Download <strong>both scripts for your operating system</strong> into that folder:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Operating system</p></th>
+<th class="head"><p>Installation (once)</p></th>
+<th class="head"><p>Start (every session)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Windows</p></td>
+<td><p><a class="reference download internal" download="" href="_downloads/6652a266d1815f5ce4c36b1161c42a97/setup.ps1"><span class="xref download myst">setup.ps1</span></a></p></td>
+<td><p><a class="reference download internal" download="" href="_downloads/db1843c9ecb514d5e107456cd0366c67/start.ps1"><span class="xref download myst">start.ps1</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>macOS / Linux</p></td>
+<td><p><a class="reference download internal" download="" href="_downloads/6e4173a510c49443a9b1c61a20ca46f6/setup.sh"><span class="xref download myst">setup.sh</span></a></p></td>
+<td><p><a class="reference download internal" download="" href="_downloads/4c59a38ecfd24cd6fff015fa7ab2d15c/start.sh"><span class="xref download myst">start.sh</span></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Keep the filenames as shown, without an extra <code class="docutils literal notranslate"><span class="pre">.txt</span></code> extension. Open a terminal in this folder. On Windows, open the folder in File Explorer, type <code class="docutils literal notranslate"><span class="pre">powershell</span></code> into the address bar and press Enter. On macOS/Linux, open Terminal, type <code class="docutils literal notranslate"><span class="pre">cd</span> </code>, drag the folder into the terminal, and press Enter.</p>
+</section>
+<section id="install-langflow-once">
+<h2>3. Install Langflow (once)<a class="headerlink" href="#install-langflow-once" title="Link to this heading">#</a></h2>
+<p>In the workshop folder use the following commands:</p>
+<section id="id1">
+<h3>Windows<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">powershell</span> <span class="n">-ExecutionPolicy</span> <span class="n">Bypass</span> <span class="o">-File</span> <span class="p">.\</span><span class="n">setup</span><span class="p">.</span><span class="n">ps1</span>
+</pre></div>
+</div>
+</section>
+<section id="id2">
+<h3>macOS / Linux<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>bash<span class="w"> </span>setup.sh
+</pre></div>
+</div>
+<p>The script installs Python 3.12 through <code class="docutils literal notranslate"><span class="pre">uv</span></code> and installs Langflow in a separate environment:</p>
+<ul class="simple">
+<li><p><strong>Windows:</strong> <code class="docutils literal notranslate"><span class="pre">%LOCALAPPDATA%\ai4t\lf-1.12</span></code>. This short path avoids Windows path-length errors caused by long dependency filenames, even if your workshop folder is deep inside another directory.</p></li>
+<li><p><strong>macOS / Linux:</strong> <code class="docutils literal notranslate"><span class="pre">.venv</span></code> inside the workshop folder.</p></li>
+</ul>
+<p>You do not need to activate that environment yourself. Installation can take several minutes and downloads many dependencies. The setup checks that Langflow’s imports work before displaying <strong>Setup complete</strong>.</p>
+</section>
+</section>
+<section id="first-start-and-workshop-import">
+<h2>4. First start and workshop import<a class="headerlink" href="#first-start-and-workshop-import" title="Link to this heading">#</a></h2>
+<p>Start Langflow from the same folder:</p>
+<section id="id3">
+<h3>Windows<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">powershell</span> <span class="n">-ExecutionPolicy</span> <span class="n">Bypass</span> <span class="o">-File</span> <span class="p">.\</span><span class="n">start</span><span class="p">.</span><span class="n">ps1</span>
+</pre></div>
+</div>
+</section>
+<section id="id4">
+<h3>macOS / Linux<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>bash<span class="w"> </span>start.sh
+</pre></div>
+</div>
+<p>Keep the terminal open. Startup can take a few minutes. Your browser should open automatically; otherwise open <a class="reference external" href="http://127.0.0.1:7860">http://127.0.0.1:7860</a>. If port 7860 is occupied, use the address printed in the terminal.</p>
+</section>
+<section id="download-and-import-the-workshop-flows">
+<h3>Download and import the workshop flows<a class="headerlink" href="#download-and-import-the-workshop-flows" title="Link to this heading">#</a></h3>
+<p>Get the prepared flows from the <a class="reference external" href="https://cloud.scadsai.uni-leipzig.de/index.php/s/Egy8BGX4wAX4dXH">ScaDS.AI Nextcloud workshop download</a>.
+<strong>Attention:</strong> the Nextcloud password is shared via the e-mail regarding workshop preparations.</p>
+<p><strong>This download link is valid until 31.12.2026.</strong> API-Key(s) expire instantly after the workshop.</p>
+<p>Download the workshop JSON file(s), for example <code class="docutils literal notranslate"><span class="pre">langflow-workshop.json</span></code>.</p>
+<ol class="arabic simple">
+<li><p>Open Langflow’s <strong>Projects</strong> page.</p></li>
+<li><p>Click <strong>Upload a flow</strong>, and select a downloaded JSON file. Alternatively, drag the JSON file into the Langflow window.</p></li>
+<li><p>Repeat for any additional flow files. The exercise instructions will identify the flows to use.</p></li>
+<li><p>Open <strong>AI4Translatology — Translation team</strong> and inspect the canvas. Prepared model components include the workshop endpoint, model name and API key; you do not need to obtain your own API key.</p></li>
+<li><p>Open <strong>Playground</strong> and send a short test request, such as: <code class="docutils literal notranslate"><span class="pre">Translate</span> <span class="pre">into</span> <span class="pre">German:</span> <span class="pre">This</span> <span class="pre">workshop</span> <span class="pre">explores</span> <span class="pre">AI-assisted</span> <span class="pre">translation.</span></code></p></li>
+</ol>
+<p>The model connection uses:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Setting</p></th>
+<th class="head"><p>Workshop value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>OpenAI-compatible base URL</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">https://llm.scads.ai/v1</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Example model ID</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Qwen/Qwen3.8-27B</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>API key</p></td>
+<td><p>Included in the prepared workshop flow</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Use the model configured in the downloaded flow. Current availability and tool support can be checked on the <a class="reference external" href="https://llm.scads.ai/status/">ScaDS.AI model status page</a> in a browser with JavaScript enabled. For multi-agent exercises, the selected model must support <strong>tool calling</strong>. No worries- we’ll explain that during the workshop. Feel free to prepare your questions.</p>
+</section>
+</section>
+<section id="starting-again-on-another-day">
+<h2>5. Starting again on another day<a class="headerlink" href="#starting-again-on-another-day" title="Link to this heading">#</a></h2>
+<p>Open a terminal in your <code class="docutils literal notranslate"><span class="pre">ai4translatology-langflow</span></code> folder and run <strong>only the start command</strong> from step 4. Do not reinstall Langflow or reimport the workshop files each time.</p>
+<p>The start script always uses this folder’s <code class="docutils literal notranslate"><span class="pre">.langflow-data</span></code> directory. Your local Langflow database is the working copy: imported flows, saved UI edits and chat history persist there between sessions. The start script does not automatically reload flow JSON files or overwrite your work.</p>
+<p>To stop Langflow, press <strong>Ctrl+C</strong> in its terminal. Closing the browser tab alone does not stop the server.</p>
+<p>Keep the workshop folder in the same location. The Python environment is an installation, not a portable environment. On Windows it is stored separately under <code class="docutils literal notranslate"><span class="pre">%LOCALAPPDATA%</span></code>; on macOS/Linux it is the workshop folder’s <code class="docutils literal notranslate"><span class="pre">.venv</span></code>. To transfer your work to another computer, export your flows from Langflow, install Langflow there using these instructions, and import the exported flows.</p>
+</section>
+<section id="troubleshooting">
+<h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Problem</p></th>
+<th class="head"><p>What to do</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">uv</span></code> is not found</p></td>
+<td><p>Reopen the terminal and check the installer’s PATH instructions.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Setup or start script is not found</p></td>
+<td><p>Check that the terminal is in the workshop folder and that the downloaded filename has no added <code class="docutils literal notranslate"><span class="pre">.txt</span></code> extension.</p></td>
+</tr>
+<tr class="row-even"><td><p>Installation fails</p></td>
+<td><p>Keep the error message and contact the workshop organisers with your operating system and the failed command.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Windows reports a missing ElevenLabs module</p></td>
+<td><p>Use the updated setup/start scripts and rerun setup. The old deeply nested <code class="docutils literal notranslate"><span class="pre">.venv</span></code> can exceed Windows’ path-length limit even when the module file exists.</p></td>
+</tr>
+<tr class="row-even"><td><p>Browser does not open</p></td>
+<td><p>Leave the terminal running and open the address printed there.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Flow asks for a key or a missing global variable</p></td>
+<td><p>Check that you imported the prepared Nextcloud flow. Let the organisers know which component is requesting configuration.</p></td>
+</tr>
+<tr class="row-even"><td><p>Model request fails</p></td>
+<td><p>Check your internet connection, the model status page, and the error shown in Playground. The workshop credentials may also have expired.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Changes seem to be missing</p></td>
+<td><p>Use the original workshop folder and its start script; another installation may use a different database.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="preparation-checklist">
+<h2>Preparation checklist<a class="headerlink" href="#preparation-checklist" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">uv</span> <span class="pre">--version</span></code> shows a version number.</p></li>
+<li><p>The setup script finishes successfully.</p></li>
+<li><p>The start script opens the Langflow editor.</p></li>
+<li><p>Once the workshop flows are available: an imported flow returns a model response.</p></li>
+<li><p>After stopping and restarting Langflow: the imported flow is still present.</p></li>
+</ul>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://docs.langflow.org/get-started-installation">Langflow installation</a></p></li>
+<li><p><a class="reference external" href="https://docs.langflow.org/concepts-flows-import">Import and export flows</a></p></li>
+<li><p><a class="reference external" href="https://docs.langflow.org/environment-variables">Langflow configuration and storage settings</a></p></li>
+<li><p><a class="reference external" href="https://docs.langflow.org/agents-tools#use-an-agent-as-a-tool">Building multi-agent flows with agents as tools</a></p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="setup.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Preparing the session</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="obsidian-setup.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Preparing Obsidian (optional)</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-uv">1. Install uv</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#windows">Windows</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#macos-linux">macOS / Linux</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#download-the-setup-scripts">2. Download the setup scripts</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-langflow-once">3. Install Langflow (once)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Windows</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">macOS / Linux</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#first-start-and-workshop-import">4. First start and workshop import</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Windows</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">macOS / Linux</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#download-and-import-the-workshop-flows">Download and import the workshop flows</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#starting-again-on-another-day">5. Starting again on another day</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#troubleshooting">Troubleshooting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preparation-checklist">Preparation checklist</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Robert Haase
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    <p class="last-updated">
+  Last updated on 2026-10-07.
+  <br/>
+</p>
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <p>
+Copyright: Licensed <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC-BY 4.0</a> unless mentioned otherwise. 
+Contributions and feedback are welcome.
+</p>
+
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

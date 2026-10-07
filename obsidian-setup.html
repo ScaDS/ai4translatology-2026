@@ -1,0 +1,733 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Preparing Obsidian (optional) &#8212; AI4Translatology</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=b8b12719"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'obsidian-setup';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Translating a speech" href="translate_speech.html" />
+    <link rel="prev" title="Preparing Langflow" href="langflow-setup.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+    <meta name="docbuild:last-update" content="2026-10-07"/>
+  
+    
+    <script src="_static/searchtools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="AI4Translatology - Home"/>
+    <img src="_static/logo.png" class="logo__image only-dark pst-js-only" alt="AI4Translatology - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    AI4Translatology
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Preparation</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="setup.html">Preparing the session</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="langflow-setup.html">Preparing Langflow</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Preparing Obsidian (optional)</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Exercises for non-coders</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="translate_speech.html">Translating a speech</a></li>
+<li class="toctree-l1"><a class="reference internal" href="word-cloud-chat.html">Word clouds for Non-Programmers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="langflow-workshop.html">Langflow: build your own team of helpers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="obsidian-workshop.html">Obsidian + Copilot: a translator’s knowledge workspace</a></li>
+<li class="toctree-l1"><a class="reference internal" href="technical-text-translation.html">Translating technical texts</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Exercises for coders seeking AI-assistance</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="word-cloud.html">Word clouds for Python-Programmers</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="word-cloud-solution.html">(Solution) Word clouds for Python-Programmers</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Links</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference external" href="https://creativecommons.org/licenses/by/4.0/">License CC-BY 4.0</a></li>
+<li class="toctree-l1"><a class="reference internal" href="imprint.html">Imprint</a></li>
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/ScaDS/ai4translatology-2026" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/ScaDS/ai4translatology-2026/issues/new?title=Issue%20on%20page%20%2Fobsidian-setup.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/obsidian-setup.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Preparing Obsidian (optional)</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-obsidian">1. Install Obsidian</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#download-and-open-the-workshop-vault">2. Download and open the workshop vault</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#enable-copilot-and-check-the-model">3. Enable Copilot and check the model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test-with-explicit-note-context">4. Test with explicit note context</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#return-to-the-same-workspace">5. Return to the same workspace</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-agent-chat-for-wiki-maintenance">Optional: Agent Chat for wiki maintenance</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#troubleshooting-and-checklist">Troubleshooting and checklist</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="preparing-obsidian-optional">
+<h1>Preparing Obsidian (optional)<a class="headerlink" href="#preparing-obsidian-optional" title="Link to this heading">#</a></h1>
+<p>This track uses <strong>Obsidian + Copilot</strong> as a workspace for notes, terminology, source texts and AI-assisted translation. Choose it instead of the Langflow exercises during the session, or prepare both tools and try this track at home.</p>
+<p>A <strong>vault</strong> is a folder of Markdown notes. Obsidian displays and links these notes; the Copilot community plugin sends your chosen context and prompts to a language model. Keeping notes locally does not make the model local: this workshop uses the <a class="reference external" href="http://ScaDS.AI">ScaDS.AI</a> endpoint.</p>
+<section id="install-obsidian">
+<h2>1. Install Obsidian<a class="headerlink" href="#install-obsidian" title="Link to this heading">#</a></h2>
+<p>Download Obsidian for <strong>Windows, macOS or Linux</strong> from the <a class="reference external" href="https://obsidian.md/download">official download page</a> and install it. No Python, <code class="docutils literal notranslate"><span class="pre">uv</span></code>, Git or Obsidian Sync subscription is required.</p>
+</section>
+<section id="download-and-open-the-workshop-vault">
+<h2>2. Download and open the workshop vault<a class="headerlink" href="#download-and-open-the-workshop-vault" title="Link to this heading">#</a></h2>
+<p>Download the Obsidian workshop vault from the <a class="reference external" href="https://cloud.scadsai.uni-leipzig.de/index.php/s/Egy8BGX4wAX4dXH">ScaDS.AI Nextcloud workshop share</a>.
+<strong>Attention:</strong> the Nextcloud password is shared via the e-mail regarding workshop preparations.</p>
+<p><strong>The link is valid until 31.12.2026.</strong> The prepared vault, Copilot configuration and workshop-access information will be supplied there.</p>
+<ol class="arabic simple">
+<li><p>Extract the vault archive into a local folder, for example <code class="docutils literal notranslate"><span class="pre">ai4translatology-obsidian</span></code> in your home folder. Do not work inside the ZIP file.</p></li>
+<li><p>Open Obsidian’s vault switcher and choose <strong>Open folder as vault</strong>.</p></li>
+<li><p>Select the extracted folder containing <code class="docutils literal notranslate"><span class="pre">00-Start.md</span></code> and the numbered note folders. Do not select its parent download folder.</p></li>
+<li><p>Open <strong>00-Start</strong> and check that its links open the other workshop notes.</p></li>
+</ol>
+<p>If the archive contains a <code class="docutils literal notranslate"><span class="pre">.obsidian</span></code> folder, keep it when extracting: this is where vault-specific settings and installed plugins live. On macOS/Linux it may be hidden in the file browser. Obsidian may ask whether to trust the vault’s plugins; enable them for the organiser-provided workshop vault.</p>
+<p>If the prepared archive is not yet available, install Obsidian and create an empty vault for now. The note set and exercises can be added when the download is ready.</p>
+</section>
+<section id="enable-copilot-and-check-the-model">
+<h2>3. Enable Copilot and check the model<a class="headerlink" href="#enable-copilot-and-check-the-model" title="Link to this heading">#</a></h2>
+<p>Open <strong>Settings → Community plugins</strong>. If Copilot is already included, enable it. Otherwise turn on community plugins, choose <strong>Browse</strong>, search for <strong>Copilot</strong> by <strong>Logan Yang</strong>, then <strong>Install</strong> and <strong>Enable</strong>. This is Copilot for Obsidian, not GitHub Copilot or Microsoft Copilot.</p>
+<p>Use the workshop’s configured chat model. The connection settings are:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Setting</p></th>
+<th class="head"><p>Workshop value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Provider</p></td>
+<td><p>Custom / OpenAI-compatible</p></td>
+</tr>
+<tr class="row-odd"><td><p>Base URL</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">https://llm.scads.ai/v1</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Example model ID</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Qwen/Qwen3.8-27B</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>API key</p></td>
+<td><p>Supplied through Nextcloud</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>In <strong>Copilot V4 (v4.0.13)</strong>, API keys are stored in this device’s <strong>Obsidian Keychain</strong>, not in the vault’s plugin settings. Copying a configured vault does not copy these keys. If prompted, enter the supplied workshop key once on your computer:</p>
+<ol class="arabic simple">
+<li><p>Open <strong>Settings → Copilot → BYOK</strong>.</p></li>
+<li><p>Edit the prepared provider, or choose <strong>Add a provider → Add a custom provider</strong>.</p></li>
+<li><p>Enter the base URL, workshop key and model ID from the access information or choose at least one from the proposed list after checking API connection.</p></li>
+<li><p>Test and save the provider. Enable the model for <strong>Quick Chat</strong> under <strong>Basic → Agents → Quick Chat</strong>, and select it as the default.</p></li>
+</ol>
+<p>For an older meetup plugin version, follow the access instructions in the supplied package rather than upgrading during setup. The organisers must check whether its saved credentials work on a second computer.</p>
+</section>
+<section id="test-with-explicit-note-context">
+<h2>4. Test with explicit note context<a class="headerlink" href="#test-with-explicit-note-context" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Open <code class="docutils literal notranslate"><span class="pre">01-Projects/Project-Brief.md</span></code>.</p></li>
+<li><p>Open the command palette with <strong>Ctrl+P</strong> on Windows/Linux or <strong>Cmd+P</strong> on macOS.</p></li>
+<li><p>Run <strong>Open Copilot Chat Window</strong>. In V4, this opens <strong>Quick Chat</strong>.</p></li>
+<li><p>Select the workshop model and the <strong>Chat</strong> mode.</p></li>
+<li><p>Use <strong>Add context (+)</strong> or the note picker to attach <strong>Project-Brief</strong>. Check the context badges before sending.</p></li>
+<li><p>Ask: <code class="docutils literal notranslate"><span class="pre">What</span> <span class="pre">is</span> <span class="pre">the</span> <span class="pre">target</span> <span class="pre">audience</span> <span class="pre">and</span> <span class="pre">requested</span> <span class="pre">output</span> <span class="pre">language</span> <span class="pre">in</span> <span class="pre">the</span> <span class="pre">attached</span> <span class="pre">brief?</span> <span class="pre">Quote</span> <span class="pre">the</span> <span class="pre">wording</span> <span class="pre">that</span> <span class="pre">supports</span> <span class="pre">your</span> <span class="pre">answer.</span></code></p></li>
+</ol>
+<p>Expected information: the audience is prospective students without an AI background, and the requested output is German. Check the quoted evidence in the note yourself.</p>
+<p>The core exercises use <strong>explicit note context</strong>. Copilot V4’s free Chat mode does not automatically search the whole vault. No embedding model, semantic-search service, paid Copilot plan or external agent runtime is needed for these exercises. Reattach the relevant notes for each new request; in V4 attachments apply to the next message.</p>
+</section>
+<section id="return-to-the-same-workspace">
+<h2>5. Return to the same workspace<a class="headerlink" href="#return-to-the-same-workspace" title="Link to this heading">#</a></h2>
+<p>Next time, open Obsidian and choose the same vault. Your edited Markdown notes and vault settings remain in that folder. Save reviewed AI output as notes using copy/paste, or the chat’s note-saving options. Do not extract a fresh workshop vault over your working copy.</p>
+<p><strong>Be aware that the API-Key for <code class="docutils literal notranslate"><span class="pre">llm.scads.ai</span></code> will expire after the workshop. You’d need to reconfigure the llm-endpoint (base_url) as well as the API-Key. Check possible providers in the workshops “Preparations-Page”</strong></p>
+</section>
+<section id="optional-agent-chat-for-wiki-maintenance">
+<span id="id1"></span><h2>Optional: Agent Chat for wiki maintenance<a class="headerlink" href="#optional-agent-chat-for-wiki-maintenance" title="Link to this heading">#</a></h2>
+<p>The main exercises need only Quick Chat. For the optional agentic wiki task,
+Copilot V4 on desktop also needs an installed Agent Chat backend:</p>
+<ol class="arabic simple">
+<li><p>Open <strong>Settings → Copilot → Basic → Agents → opencode → Configure</strong>.</p></li>
+<li><p>If it is not already prepared, choose <strong>Managed by Copilot → Download &amp; install</strong>.</p></li>
+<li><p>Select the workshop model in <strong>Basic → Agents → opencode</strong>. Copilot can
+pass supported BYOK provider settings to this backend. Confirm that the
+workshop model appears and sends a successful request; availability in
+Quick Chat alone does not guarantee that it is routable in Agent Chat.</p></li>
+<li><p>Run <strong>Open Copilot Agent Chat Window</strong>, select the installed backend if
+prompted, and open a chat for this vault.</p></li>
+<li><p>Ask it to read the vault-root <code class="docutils literal notranslate"><span class="pre">AGENTS.md</span></code> and <code class="docutils literal notranslate"><span class="pre">05-Wiki/AGENTS.md</span></code> before
+working on the wiki. You can check the instructions by opening these notes yourself.</p></li>
+</ol>
+<p>If the backend or model is unavailable, use the manual Quick Chat path in
+<a class="reference internal" href="obsidian-workshop.html"><span class="std std-doc">the wiki exercise</span></a>. These instruction files guide the
+agent; they do not enforce file permissions or replace your source checks.</p>
+<p>The packaged vault also contains <strong><a class="reference external" href="http://Workshop-Guide.md">Workshop-Guide.md</a></strong>, a copy of the exercises
+adapted for reading inside Obsidian. Open it from <strong>00-Start</strong>.</p>
+</section>
+<section id="troubleshooting-and-checklist">
+<h2>Troubleshooting and checklist<a class="headerlink" href="#troubleshooting-and-checklist" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Check / problem</p></th>
+<th class="head"><p>What to do</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">00-Start</span></code> is missing</p></td>
+<td><p>Extract the archive and open the folder that actually contains the notes.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Copilot command is missing</p></td>
+<td><p>Enable Copilot under Community plugins.</p></td>
+</tr>
+<tr class="row-even"><td><p>Model asks for a key</p></td>
+<td><p>Enter the workshop key from Nextcloud; V4 keys are device-specific.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Provider test works but chat fails</p></td>
+<td><p>Check the selected model and the <a class="reference external" href="https://llm.scads.ai/status/">ScaDS.AI status page</a>. In V4, try the custom provider’s <strong>Enable CORS</strong> setting if suggested by the error.</p></td>
+</tr>
+<tr class="row-even"><td><p>Answer ignores the wording table</p></td>
+<td><p>Attach the table explicitly and check the context badges before sending.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Interface differs from the instructions</p></td>
+<td><p>Check the plugin version supplied with the workshop vault.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>You are ready when the vault opens, Copilot returns an answer using the attached brief, and an edited note is still present after reopening Obsidian. Continue with <a class="reference internal" href="obsidian-workshop.html"><span class="std std-doc">the Obsidian workshop</span></a>.</p>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://help.obsidian.md/manage-vaults">Obsidian vaults</a></p></li>
+<li><p><a class="reference external" href="https://www.obsidiancopilot.com/docs/chat-interface">Copilot Quick Chat</a></p></li>
+<li><p><a class="reference external" href="https://www.obsidiancopilot.com/docs/llm-providers">Copilot providers and device-specific key storage</a></p></li>
+<li><p><a class="reference external" href="https://www.obsidiancopilot.com/docs/context-and-mentions">Adding note context</a></p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="langflow-setup.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Preparing Langflow</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="translate_speech.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Translating a speech</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-obsidian">1. Install Obsidian</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#download-and-open-the-workshop-vault">2. Download and open the workshop vault</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#enable-copilot-and-check-the-model">3. Enable Copilot and check the model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test-with-explicit-note-context">4. Test with explicit note context</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#return-to-the-same-workspace">5. Return to the same workspace</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-agent-chat-for-wiki-maintenance">Optional: Agent Chat for wiki maintenance</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#troubleshooting-and-checklist">Troubleshooting and checklist</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Robert Haase
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    <p class="last-updated">
+  Last updated on 2026-10-07.
+  <br/>
+</p>
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <p>
+Copyright: Licensed <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC-BY 4.0</a> unless mentioned otherwise. 
+Contributions and feedback are welcome.
+</p>
+
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

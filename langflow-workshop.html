@@ -1,0 +1,840 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Langflow: build your own team of helpers &#8212; AI4Translatology</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=b8b12719"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'langflow-workshop';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Obsidian + Copilot: a translator’s knowledge workspace" href="obsidian-workshop.html" />
+    <link rel="prev" title="Word clouds for Non-Programmers" href="word-cloud-chat.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+    <meta name="docbuild:last-update" content="2026-10-07"/>
+  
+    
+    <script src="_static/searchtools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="AI4Translatology - Home"/>
+    <img src="_static/logo.png" class="logo__image only-dark pst-js-only" alt="AI4Translatology - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    AI4Translatology
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Preparation</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="setup.html">Preparing the session</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="langflow-setup.html">Preparing Langflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="obsidian-setup.html">Preparing Obsidian (optional)</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Exercises for non-coders</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="translate_speech.html">Translating a speech</a></li>
+<li class="toctree-l1"><a class="reference internal" href="word-cloud-chat.html">Word clouds for Non-Programmers</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Langflow: build your own team of helpers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="obsidian-workshop.html">Obsidian + Copilot: a translator’s knowledge workspace</a></li>
+<li class="toctree-l1"><a class="reference internal" href="technical-text-translation.html">Translating technical texts</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Exercises for coders seeking AI-assistance</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="word-cloud.html">Word clouds for Python-Programmers</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="word-cloud-solution.html">(Solution) Word clouds for Python-Programmers</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Links</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference external" href="https://creativecommons.org/licenses/by/4.0/">License CC-BY 4.0</a></li>
+<li class="toctree-l1"><a class="reference internal" href="imprint.html">Imprint</a></li>
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/ScaDS/ai4translatology-2026" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/ScaDS/ai4translatology-2026/issues/new?title=Issue%20on%20page%20%2Flangflow-workshop.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/langflow-workshop.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Langflow: build your own team of helpers</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preparation">Preparation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-you-looking-at">What are you looking at?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-1-watch-the-team-work-10-minutes">Task 1 — Watch the team work (10 minutes)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-2-make-a-helper-work-the-way-you-want-10-minutes">Task 2 — Make a helper work the way you want (10 minutes)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-3-give-the-terminology-specialist-a-web-search-tool-15-minutes">Task 3 — Give the terminology specialist a web-search tool (15 minutes)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#connect-the-tool">Connect the tool</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tell-the-specialist-when-to-use-it">Tell the specialist when to use it</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-4-add-a-helper-of-your-own-15-minutes">Task 4 — Add a helper of your own (15 minutes)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#take-it-home">Take it home</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="langflow-build-your-own-team-of-helpers">
+<h1>Langflow: build your own team of helpers<a class="headerlink" href="#langflow-build-your-own-team-of-helpers" title="Link to this heading">#</a></h1>
+<p><strong>Low-code track · approximately 45–60 minutes · no programming required</strong></p>
+<section id="preparation">
+<h2>Preparation<a class="headerlink" href="#preparation" title="Link to this heading">#</a></h2>
+<p>Complete <a class="reference internal" href="langflow-setup.html"><span class="std std-doc">Preparing Langflow</span></a> before starting. Open the
+prepared <strong>AI4Translatology — Translation team</strong> flow. The workshop starts
+with a working example; you will explore it, change it and add your own helper.</p>
+<p><strong>Goal:</strong> Discover how you can delegate a small part of your work to an AI
+helper, give it a clear role, and decide which tools and other helpers it can use.</p>
+<p>By the end, you should be able to explain how the prepared team works, attach
+a web-search tool, and define a helper for a task from your own study or work.</p>
+</section>
+<section id="what-are-you-looking-at">
+<h2>What are you looking at?<a class="headerlink" href="#what-are-you-looking-at" title="Link to this heading">#</a></h2>
+<p>The canvas is a visual description of who does what. A <strong>node</strong> is a component;
+a connecting line passes information or makes a tool available. You change
+instructions and connect components through the interface, without writing code.</p>
+<p>Find these components in the prepared flow:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Component</p></th>
+<th class="head"><p>Its job</p></th>
+<th class="head"><p>What to inspect</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Source and translation brief</strong></p></td>
+<td><p>Receives your text and task.</p></td>
+<td><p>The sample request in its text field.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Translation coordinator</strong></p></td>
+<td><p>Decides which specialist to ask and brings their results together.</p></td>
+<td><p><strong>Agent Instructions</strong> and the <strong>Tools</strong> connections.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Terminology specialist</strong></p></td>
+<td><p>Checks preferred wordings and contextual examples.</p></td>
+<td><p>Its instructions, including the small wording table and teaching corpus.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Translator</strong></p></td>
+<td><p>Produces a draft for the requested audience.</p></td>
+<td><p>Its translation instructions.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Translation reviewer</strong></p></td>
+<td><p>Checks the draft against the source and brief.</p></td>
+<td><p>Its review criteria.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Shared ScaDS model</strong></p></td>
+<td><p>Supplies the language model used by all four roles.</p></td>
+<td><p>Its connections to the agents’ <strong>Language Model</strong> inputs.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Reviewed translation</strong></p></td>
+<td><p>Displays the result in the chat.</p></td>
+<td><p>The connection from the coordinator.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The specialists’ <strong>Toolset</strong> outputs connect to the coordinator’s <strong>Tools</strong>
+input. This lets the coordinator <em>call</em> a specialist with a task and receive a
+result. The specialists are not simply three boxes that always run in order.
+The coordinator’s instructions guide delegation; the actual calls show what happened.</p>
+<p>All four roles use the same underlying model. Their different instructions
+make them different helpers, not independent experts or differently trained models.</p>
+</section>
+<section id="task-1-watch-the-team-work-10-minutes">
+<h2>Task 1 — Watch the team work (10 minutes)<a class="headerlink" href="#task-1-watch-the-team-work-10-minutes" title="Link to this heading">#</a></h2>
+<p>Open <strong>Playground</strong> and send this request:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Translate into German for prospective students without an AI background.
+Call the terminology specialist, translator and reviewer. Follow the project
+wording rules, then return the translation and terminology decisions.
+
+Source: Participants use machine translation and a translation memory.
+Chat memory contains earlier messages. A human checks the draft before release.
+</pre></div>
+</div>
+<p>Read the final answer, then expand the tool calls / agent steps in Playground.
+Look for <code class="docutils literal notranslate"><span class="pre">terminology_lookup</span></code>, <code class="docutils literal notranslate"><span class="pre">translate_text</span></code> and <code class="docutils literal notranslate"><span class="pre">review_translation</span></code>.</p>
+<p>Work through these questions with a partner:</p>
+<ol class="arabic simple">
+<li><p>Which specialist was called first, and what information did it receive?</p></li>
+<li><p>Did the translator receive the terminology decisions?</p></li>
+<li><p>Did the reviewer receive both the original source and the draft?</p></li>
+<li><p>Which decisions did the coordinator make after receiving the results?</p></li>
+<li><p>Can you find <strong>Translation Memory</strong>, <strong>Chatverlauf</strong> and <strong>Veröffentlichung</strong>
+in the output, and trace their choice to an instruction or example?</p></li>
+</ol>
+<p>The supplied wording table and corpus examples are fictional teaching material.
+One older corpus example conflicts with the current wording rules. Check how
+the team handles that conflict instead of assuming that a fluent result is correct.</p>
+<p><strong>Checkpoint:</strong> Explain the difference between a specialist’s instructions
+and the connection that makes that specialist available to the coordinator.</p>
+</section>
+<section id="task-2-make-a-helper-work-the-way-you-want-10-minutes">
+<h2>Task 2 — Make a helper work the way you want (10 minutes)<a class="headerlink" href="#task-2-make-a-helper-work-the-way-you-want-10-minutes" title="Link to this heading">#</a></h2>
+<p>Select <strong>Translation reviewer</strong> on the canvas and open <strong>Agent Instructions</strong>.
+Read its existing role, then append:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>For this task, prioritise accessibility for readers without an AI background.
+Identify up to three expressions that may need an explanation. Quote each
+expression and suggest a short explanation separately from the translation.
+Do not insert new factual explanations into the translated text itself.
+</pre></div>
+</div>
+<p>Start a new Playground conversation and send the same request from Task 1.
+Compare the review tool’s result with your earlier run:</p>
+<ul class="simple">
+<li><p>Did the reviewer do the additional job?</p></li>
+<li><p>Did the coordinator include useful suggestions in its final answer?</p></li>
+<li><p>Did any other role start doing something you had not requested?</p></li>
+</ul>
+<p>Then change the audience in your request to <strong>professional translators</strong> and
+repeat in a new conversation. Decide whether the review instructions still fit.</p>
+<p><strong>Checkpoint:</strong> You have adapted a helper by changing its brief, without
+changing the software. Write down one review task you could delegate in your own work.</p>
+</section>
+<section id="task-3-give-the-terminology-specialist-a-web-search-tool-15-minutes">
+<h2>Task 3 — Give the terminology specialist a web-search tool (15 minutes)<a class="headerlink" href="#task-3-give-the-terminology-specialist-a-web-search-tool-15-minutes" title="Link to this heading">#</a></h2>
+<p>The prepared team can work with the examples in its instructions. Next, give
+one specialist a way to find external information about a real corpus resource.</p>
+<section id="connect-the-tool">
+<h3>Connect the tool<a class="headerlink" href="#connect-the-tool" title="Link to this heading">#</a></h3>
+<ol class="arabic">
+<li><p>Return to the canvas. Search the component list for <strong>Web Search</strong> and drag
+the built-in component onto the canvas.</p></li>
+<li><p>Set <strong>Search Mode</strong> to <strong>Web</strong>. In its inspection panel, set <strong>Max Results</strong>
+to <code class="docutils literal notranslate"><span class="pre">3</span></code> and <strong>Max Content Length</strong> to <code class="docutils literal notranslate"><span class="pre">1000</span></code> for a small, readable result set.</p></li>
+<li><p>Open the Web Search component’s header menu and enable <strong>Tool Mode</strong>.</p></li>
+<li><p>Drag its <strong>Toolset</strong> output to the <strong>Tools</strong> input of <strong>Terminology specialist</strong>.
+Keep the specialist’s existing connection to the coordinator.</p></li>
+<li><p>Open <strong>Edit Tool Actions</strong> on Web Search. Give the search action the slug
+<code class="docutils literal notranslate"><span class="pre">search_corpus_documentation</span></code> and this description:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Search for official corpus documentation and public usage guidance.
+Use this to find sources and access information, not to invent corpus counts.
+</pre></div>
+</div>
+</li>
+</ol>
+<p>The built-in Web Search component uses DuckDuckGo in Web mode and does not
+need a separate search-service account for this exercise.</p>
+</section>
+<section id="tell-the-specialist-when-to-use-it">
+<h3>Tell the specialist when to use it<a class="headerlink" href="#tell-the-specialist-when-to-use-it" title="Link to this heading">#</a></h3>
+<p>Append to <strong>Terminology specialist → Agent Instructions</strong>:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>When asked to research a real corpus resource, use search_corpus_documentation.
+Prefer official documentation. Return the page title, URL and a short supporting
+quote. Distinguish search snippets from page content you actually received.
+Do not claim that a documentation search is a corpus query or frequency count.
+If the search returns no usable evidence, report that clearly.
+</pre></div>
+</div>
+<p>Now ask the team in a new Playground conversation:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Before translating, ask the terminology specialist to use web search to find
+official DWDS documentation about its corpora and search facilities. Suggest
+one way a translator could use the resource to check a German wording.
+Give the source URL and a supporting quote. Do not invent a corpus query,
+frequency count or concordance result.
+
+Then translate for prospective students:
+Participants use a corpus to check wording in context.
+</pre></div>
+</div>
+<p>Inspect the nested calls: the <strong>coordinator calls the terminology specialist</strong>,
+and the <strong>terminology specialist calls Web Search</strong>. Open a returned URL and
+check whether the quote and recommendation are supported. The official
+<a class="reference external" href="https://www.dwds.de/">DWDS portal</a> is a starting point for your manual check.</p>
+<p>If search is rate-limited or returns nothing, inspect that result with the
+group: did the helper admit the gap? Retry with a narrow query such as
+<code class="docutils literal notranslate"><span class="pre">site:dwds.de</span> <span class="pre">Korpora</span> <span class="pre">Suche</span></code>. A manually visited page can support your discussion,
+but is not evidence that the agent successfully searched.</p>
+<p><strong>Checkpoint:</strong> Adding a tool gives a helper a new capability. Its description
+and the agent’s instructions influence when and how that capability is used.</p>
+</section>
+</section>
+<section id="task-4-add-a-helper-of-your-own-15-minutes">
+<h2>Task 4 — Add a helper of your own (15 minutes)<a class="headerlink" href="#task-4-add-a-helper-of-your-own-15-minutes" title="Link to this heading">#</a></h2>
+<p>Choose a small task with an output you can check. For example:</p>
+<ul class="simple">
+<li><p>turn a translation brief into a preparation checklist;</p></li>
+<li><p>collect terms and open questions before an interpreting assignment;</p></li>
+<li><p>check whether a translation fits a specified audience;</p></li>
+<li><p>turn meeting notes into actions, without inventing owners or deadlines.</p></li>
+</ul>
+<p>For a guided example, build an <strong>Interpreting preparation helper</strong>:</p>
+<ol class="arabic">
+<li><p>Drag a new <strong>Agent</strong> onto the canvas and give it a recognisable display name.</p></li>
+<li><p>Connect the prepared shared model’s <strong>Language Model</strong> output to the new
+agent’s <strong>Language Model</strong> input. Use the existing model connection pattern.</p></li>
+<li><p>Enter these <strong>Agent Instructions</strong>:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Help a human interpreter prepare from the event brief supplied in the task.
+Return: topic summary, bilingual English–German candidate glossary,
+names and abbreviations, and questions needing clarification.
+Label translations as candidates unless the brief confirms them.
+Do not invent speakers, facts, pronunciations or event details.
+</pre></div>
+</div>
+</li>
+<li><p>Enable <strong>Tool Mode</strong>. In <strong>Edit Tool Actions</strong>, enable the normal-response
+action, give it the slug <code class="docutils literal notranslate"><span class="pre">prepare_interpreting</span></code>, and describe it as
+<code class="docutils literal notranslate"><span class="pre">Prepare</span> <span class="pre">an</span> <span class="pre">interpreting</span> <span class="pre">checklist</span> <span class="pre">and</span> <span class="pre">candidate</span> <span class="pre">glossary</span> <span class="pre">from</span> <span class="pre">an</span> <span class="pre">event</span> <span class="pre">brief</span></code>.
+Disable the structured-response action for this exercise.</p></li>
+<li><p>Connect its <strong>Toolset</strong> output to the coordinator’s <strong>Tools</strong> input.</p></li>
+<li><p>Append to the coordinator’s instructions:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>For interpreting-preparation requests, call prepare_interpreting with the
+complete event brief and return its checklist and open questions.
+Do not run the translation-and-review workflow unless translation is requested.
+</pre></div>
+</div>
+</li>
+</ol>
+<p>Test in a new Playground conversation:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Use the interpreting preparation helper for this fictional event brief:
+A university panel discusses machine translation, translation memories and
+terminology management. The audience consists of first-year students.
+The working languages are English and German. Speaker names are not yet known.
+</pre></div>
+</div>
+<p>Check that your helper was actually called, that the glossary is useful, and
+that unknown speaker names remain unknown. Then try a less complete brief and
+see whether it asks the right questions.</p>
+<p><strong>Checkpoint:</strong> Describe your helper in one sentence: “When I need ___, it
+uses ___ and returns ___; I check ___ before using the result.”</p>
+</section>
+<section id="take-it-home">
+<h2>Take it home<a class="headerlink" href="#take-it-home" title="Link to this heading">#</a></h2>
+<p>You do not need to build a large autonomous system to get useful help. Start
+with one repeated task, a clear role, the necessary context and an output you
+can inspect. Add a tool or another specialist when it serves that task.</p>
+<p>Before leaving, note:</p>
+<ul class="simple">
+<li><p><strong>My task:</strong> What could I delegate next week?</p></li>
+<li><p><strong>My helper’s brief:</strong> What must it know and what should it return?</p></li>
+<li><p><strong>Its tools:</strong> What does it need beyond a language model?</p></li>
+<li><p><strong>My check:</strong> How will I tell whether it really helped?</p></li>
+</ul>
+<p>Your saved changes remain in your local Langflow workspace. Revisit them later
+or try the <a class="reference internal" href="obsidian-workshop.html"><span class="std std-doc">optional Obsidian track</span></a> at home.</p>
+<p><em>Built with <a class="reference external" href="https://www.langflow.org/">Langflow</a>. The prepared flow contains
+Langflow/LFX components under the MIT license, with notices in their code fields.</em></p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="word-cloud-chat.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Word clouds for Non-Programmers</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="obsidian-workshop.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Obsidian + Copilot: a translator’s knowledge workspace</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preparation">Preparation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-you-looking-at">What are you looking at?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-1-watch-the-team-work-10-minutes">Task 1 — Watch the team work (10 minutes)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-2-make-a-helper-work-the-way-you-want-10-minutes">Task 2 — Make a helper work the way you want (10 minutes)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-3-give-the-terminology-specialist-a-web-search-tool-15-minutes">Task 3 — Give the terminology specialist a web-search tool (15 minutes)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#connect-the-tool">Connect the tool</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tell-the-specialist-when-to-use-it">Tell the specialist when to use it</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-4-add-a-helper-of-your-own-15-minutes">Task 4 — Add a helper of your own (15 minutes)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#take-it-home">Take it home</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Robert Haase
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    <p class="last-updated">
+  Last updated on 2026-10-07.
+  <br/>
+</p>
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <p>
+Copyright: Licensed <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC-BY 4.0</a> unless mentioned otherwise. 
+Contributions and feedback are welcome.
+</p>
+
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
