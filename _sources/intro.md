@@ -2,12 +2,13 @@
 
 This page contains training materials for using Large Language Models for text data analysis and code generation. 
 
+![](images/)
+
 ## Target audience
 
-For the low-code workshop, choose between **Langflow**, a visual agent builder, and the optional **Obsidian + Copilot** knowledge-workspace track. You can prepare both and take the second track home. See [Preparing the session](setup.md) for the choice of tools and [the Obsidian exercises](obsidian-workshop.md) for everyday work, a source-based wiki and terminology-aware translation.
-
-## Advanced use (optional)
 The exercises are written for scientists from linguistics and translatology with interests in processing text data using modern large language models, with and without coding.
+
+For the low-code workshop, attendees can choose between a visual agent builder ([installation instructions](langflow-setup.md)), and an knowledge-workspace track ([installation instructions](obsidian-setup.md)).
 
 For the Python programmers among the attendees, please make sure to install Python and some libraries as explained [on this page](setup.md). 
 
