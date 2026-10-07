@@ -2,15 +2,11 @@
 
 This page contains training materials for using Large Language Models for text data analysis and code generation. 
 
+![](images/)
+
 ## Target audience
 
-The notebooks are written for scientists with interests in processing text data using modern large language models, with and without coding skills.
-
-## How to use these materials
-
-In general, you can go through the exercises provided in the left navigation panel of this page. 
-
-## Advanced use (optional)
+The notebooks are written for scientists from linguistics and translatology with interests in processing text data using modern large language models, with and without coding.
 
 For the Python programmers among the attendees, please make sure to install Python and some libraries as explained [on this page](setup.md). 
 
