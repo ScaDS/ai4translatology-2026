@@ -1,8 +1,10 @@
-# Structure, search and reuse your translation knowledge 
+> Workshop guide generated from the Jupyter Book source. Your working notes and agent instructions are in this vault.
+
+# Structure, search and reuse your translation knowledge
 
 **Optional track · approximately 45–60 minutes · no coding required**
 
-Use this track during the workshop or take it home after exploring Langflow. Start with [Preparing Obsidian](obsidian-setup.md). The exercises use the note set in the prepared Nextcloud vault. All sample project documents and corpus passages are **fictional teaching material** written for this workshop.
+Use this track during the workshop or take it home after exploring Langflow. Start with [Preparing Obsidian](https://scads.github.io/ai4translatology-2026/obsidian-setup.html). The exercises use the note set in the prepared Nextcloud vault. All sample project documents and corpus passages are **fictional teaching material** written for this workshop.
 
 Our question: **How can a small, inspectable knowledge workspace make everyday translation work easier?**
 
@@ -17,11 +19,9 @@ You will produce:
 ### Open a note and give it to Copilot
 
 1. In Obsidian's left file explorer, expand a folder and click a note to read it.
-2. Open the command palette (**Ctrl+P** on Windows/Linux, **Cmd+P** on macOS) and
-   run **Open Copilot Chat Window**. Use **Chat / Quick Chat** with the workshop model.
-3. In the chat input, type **`@`**, choose the note/context picker and select
-   the note by name. Repeat for each required note. Alternatively, use
-   **Add context (+)** to select notes.
+2. In the chat input (on the right, copilot & opencode), type **`@`**, choose the note/context or a complete folder and select
+   it. Repeat for each required note. Alternatively, use
+   **Add context (+)** next to the model-selection underneath the chat-input to select notes.
 4. Check the **context badges above the input**: they show the notes or
    selections included with your request. Remove unrelated ones with **×**.
 5. Paste the task prompt and send it. Read the result, then check it against the notes.
@@ -87,6 +87,7 @@ confirmed project requirement.
 ## Task 2 — Build a small source-based LLM wiki (15 minutes)
 
 Here, an **LLM wiki** means a linked set of knowledge notes drafted with AI and reviewed against sources. It is not a collection of unverified model answers.
+The concept was published by [A. Karpathy in a gist that you can read here](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f).
 
 1. Expand `02-Sources` and read the three **Source-A/B/C** notes. Find passage
    **C2** in **Source-C-Review**: this is evidence, not a translation assignment.
@@ -94,7 +95,7 @@ Here, an **LLM wiki** means a linked set of knowledge notes drafted with AI and 
    using a second LLM as a reviewer? Quote the passage.` Check the quote.
 3. Open `08-Templates/Wiki-Entry.md` and copy its contents. Right-click
    `05-Wiki`, choose **New note**, name it **Terminology-aware translation**,
-   and paste the template. No template plugin is needed.
+   and paste the template. 
 4. Start a new chat and attach **Source-A-Workflow**, **Source-B-Terminology**,
    **Source-C-Review** and **Wiki-Entry**. Verify all four context badges.
    Use the prompt below, also stored as **Wiki-Builder**:
@@ -114,24 +115,17 @@ Copy the proposed entry into your new note and check every quote against
 **Reviewed entries** and set its status to **reviewed** only after your checks.
 
 Reattach the three source notes and try: `What do these sources say about
-comparative BLEU scores?` They contain no such results. Record whether Copilot
-acknowledges that gap.
+comparative BLEU scores?` 
+The twist: *They contain no such results.* Record whether Copilot
+acknowledges that gap- correct answers based on context are the foundation of a decent, accurate LLM-Wiki.
 
-**Discuss:** What makes the wiki useful later: fluent prose, evidence, links, or recorded uncertainty? Does a convincing citation actually support the sentence it accompanies?
+**You are now set for your own LLM-Wiki.**
 
-### Optional extension — Let an agent maintain the wiki (10–15 minutes)
+## Let an agent maintain the wiki (10–15 minutes)
 
-Use this extension if the workshop vault has a working **Agent Chat** backend,
-or try it later at home. The core tasks still work in Quick Chat. Follow the
-[optional Agent Chat preparation](obsidian-setup.md)
-if needed.
+Open a new chat and attach the vault-root AGENTS.md and 05-Wiki/AGENTS.md (with **@** or **+**). The first file is a router: it tells the agent where to start. The second defines the wiki schema and maintenance workflow. Check Wiki-Index, Overview and Change-Log before requesting a change.
 
-Open the vault-root **AGENTS.md** and **05-Wiki/AGENTS.md**. The first file is a
-router: it tells the agent where to start. The second defines the wiki schema
-and maintenance workflow. Check **Wiki-Index**, **Overview** and **Change-Log**
-before requesting a change.
-
-Open **Copilot Agent Chat** and send:
+In Copilot Chat send:
 
 ```text
 Read the vault-root AGENTS.md, then 05-Wiki/AGENTS.md and Wiki-Index.md.
@@ -143,17 +137,12 @@ Do not mark anything as human-reviewed. Report the files you changed and
 the claims that still need checking.
 ```
 
-Inspect the changed notes. Did the agent follow the schema, preserve sources,
-add working links and leave its entry as a draft? Verify at least two quotes
-yourself. Only you can mark the entry as reviewed after checking it.
+Inspect the changed notes. Did the agent follow the schema, preserve sources, add working links and leave its entry as a draft? Verify at least two quotes yourself. Only you can mark the entry as reviewed after checking it.
+Try also to add or change information. What happens? Could this serve as a knowledge base maintained by an LLM? Ask it questions to answer this.
 
-If you use **Quick Chat**, attach both instruction files, the three sources,
-the template and the index explicitly. Ask for proposed note contents, then
-save and link them yourself. Quick Chat does not automatically read `AGENTS.md`
-or perform the same file-maintenance workflow.
+Checkpoint: You can delegate drafting and linking while keeping the evidence, review status and maintenance history visible. 
 
-**Checkpoint:** You can delegate drafting and linking while keeping the
-evidence, review status and maintenance history visible.
+**Discuss:** What makes the wiki useful: how would you maintain such a wiki and what use-cases could you think of? 
 
 ## Task 3 — A translation copilot with wording lookup and corpus evidence (20 minutes)
 

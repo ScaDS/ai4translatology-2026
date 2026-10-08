@@ -15,36 +15,61 @@ The password is in the preparation email; the link is valid until **31.12.2026**
 For using obsidian and the copilot with your local setup see the **Hint** down below at the end of this page.
 
 In Obsidian, choose **Open folder as vault** and select the extracted folder
-containing `00-Start.md`. Keep the included `.obsidian` folder. Follow any
-first-start prompts and enable the supplied community plugins when asked.
+`ai4translatology-obsidian-vault`. Keep the included `.obsidian` and all other folders- these include the prepared setting. Follow any
+first-start prompts and enable the supplied community plugins when asked. The procedure should be as follows:
 
-## 3. Enter the workshop API key
+1. **Trust the vault:**
 
-1. Open **Settings → Copilot → BYOK**.
-2. Edit the prepared **ScaDS.AI provider** and paste the key supplied through Nextcloud.
-3. Click **Test**, then **Save**.
+   ![](images/obsidian_vault_approve.png)
 
-The key must be entered once on each computer and expires after the workshop.
+2. **Configure Opencode (LLM/Agent-Harness)**
+
+   ![](images/obsidian_configure_opencode.png)
+
+3. **Download & Install Opencode**
+
+   ![](images/obsidian_download_install.png)
+
+4. **Configure the Copilot Plugin**
+
+   - Click the Setting-Icon (down left)
+   - Choose Copilot in the right menu
+   - Click `BYOK` in the Copilot Settings
+   - For `llm_scads` click the setting icon (three points)
+
+   ![](images/obsidian_configure_copilot.png)
+
+5. **Configure llm_scads**
+
+   - Enter provided workshop API-Key (see Nextcloud!)
+   - Click `Test`
+   - Now there should be written `verified` and the available models should be listed down below (keep the model selection)
+   - Click `Save`
+
+   ![](images/obsidian_tud-ai.png)
+
+6. **Restart Obsidian!**
+
 
 ## 4. Test the chat
 
-Open `01-Projects/Project-Brief.md`. In the command palette (**Ctrl+P** on
-Windows/Linux, **Cmd+P** on macOS), select **Open Copilot Chat Window**.
-Use the prepared workshop model in **Chat** mode. Select the respective LLM in the copilot!
+Open e.g. `Workshop-Guide.md`. Select the respective LLM in the copilot on the right (should be e.g. `llm_scads/Qwen/Qwen3.8-27B`).
 
-Attach **Project-Brief** using **`@`** or **Add context (+)**, check its context
-badge, and send:
+   ![](images/obsidian_set_chat.png)
+
+Attach **Project-Brief** or the whole **01-Projects** Folder using **`@`** or **Add context (+)**. 
+
+   ![](images/obsidian_general_chat.png)
+
+Check its context badge, and send:
 
 ```text
 What is the target audience and requested output language in the attached brief?
 ```
 
-Expected: prospective students without an AI background; German.
+*Expected*: prospective students without an AI background; German.
 Continue with **Workshop-Guide** in the vault or [the workshop page](obsidian-workshop.md).
 Next time, simply reopen the same vault.
-
-For the optional Agent Chat exercise, follow [Copilot's agent setup instructions](https://www.obsidiancopilot.com/docs/getting-started)
-if an agent backend is not already prepared.
 
 *Uses [Obsidian](https://obsidian.md/) and [Copilot for Obsidian](https://www.obsidiancopilot.com/docs)
 by Logan Yang.*
