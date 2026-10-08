@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Preparing Obsidian (optional) &#8212; AI4Translatology</title>
+    <title>Python installation (optional) &#8212; AI4Translatology</title>
   
   
   
@@ -60,12 +60,12 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'obsidian-setup';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'install_python';</script>
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Python installation (optional)" href="install_python.html" />
-    <link rel="prev" title="Preparing Langflow" href="langflow-setup.html" />
+    <link rel="next" title="Translating a speech" href="translate_speech.html" />
+    <link rel="prev" title="Preparing Obsidian (optional)" href="obsidian-setup.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -224,8 +224,8 @@
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="setup.html">Preparing the session</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="langflow-setup.html">Preparing Langflow</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Preparing Obsidian (optional)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="install_python.html">Python installation (optional)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="obsidian-setup.html">Preparing Obsidian (optional)</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Python installation (optional)</a></li>
 </ul>
 </details></li>
 </ul>
@@ -325,7 +325,7 @@
       
       
       
-      <li><a href="https://github.com/ScaDS/ai4translatology-2026/issues/new?title=Issue%20on%20page%20%2Fobsidian-setup.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/ScaDS/ai4translatology-2026/issues/new?title=Issue%20on%20page%20%2Finstall_python.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -355,7 +355,7 @@
       
       
       
-      <li><a href="_sources/obsidian-setup.md" target="_blank"
+      <li><a href="_sources/install_python.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -431,7 +431,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Preparing Obsidian (optional)</h1>
+    <h1>Python installation (optional)</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -441,10 +441,9 @@
             </div>
             <nav aria-label="Page">
                 <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-obsidian">1. Install Obsidian</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#open-the-prepared-vault">2. Open the prepared vault</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#enter-the-workshop-api-key">3. Enter the workshop API key</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test-the-chat">4. Test the chat</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-install-mini-forge">Step 1: Install Mini-forge</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-install-python-and-libraries">Step 2: Install Python and libraries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-testing-the-installation">Step 3: Testing the installation</a></li>
 </ul>
             </nav>
         </div>
@@ -456,49 +455,47 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="preparing-obsidian-optional">
-<h1>Preparing Obsidian (optional)<a class="headerlink" href="#preparing-obsidian-optional" title="Link to this heading">#</a></h1>
-<p>Complete these four steps before the workshop. The prepared vault includes
-Copilot and the workshop model settings.</p>
-<section id="install-obsidian">
-<h2>1. Install Obsidian<a class="headerlink" href="#install-obsidian" title="Link to this heading">#</a></h2>
-<p>Download <a class="reference external" href="https://obsidian.md/download">Obsidian for your operating system</a>
-and follow the installer’s instructions.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="python-installation-optional">
+<h1>Python installation (optional)<a class="headerlink" href="#python-installation-optional" title="Link to this heading">#</a></h1>
+<p>If you want to use AI-assistance in <a class="reference external" href="https://jupyter.org/">Jupyter Lab</a> on your own computer, make sure you have it installed together with Python and some libraries.</p>
+<p>One way of doing this, is by managing <em>Conda</em> environments (<a class="reference external" href="https://focalplane.biologists.com/2022/12/08/managing-scientific-python-environments-using-conda-mamba-and-friends/">read more</a></p>
+<section id="step-1-install-mini-forge">
+<h2>Step 1: Install Mini-forge<a class="headerlink" href="#step-1-install-mini-forge" title="Link to this heading">#</a></h2>
+<p>Download and install Conda. We recommend the Conda distribution <a class="reference external" href="https://conda-forge.org/download/">mini-forge</a>.</p>
+<p>For ease-of-use, it is recommended to install it for your use only and to add Conda to the PATH variable during installation.</p>
+<p><img alt="img.png" src="_images/miniforge1.png" /></p>
+<p><img alt="img.png" src="_images/miniforge2.png" /></p>
 </section>
-<section id="open-the-prepared-vault">
-<h2>2. Open the prepared vault<a class="headerlink" href="#open-the-prepared-vault" title="Link to this heading">#</a></h2>
-<p>Download and extract the vault from <a class="reference external" href="https://cloud.scadsai.uni-leipzig.de/index.php/s/Egy8BGX4wAX4dXH">Nextcloud</a>.
-The password is in the preparation email; the link is valid until <strong>31.12.2026</strong>.</p>
-<p>In Obsidian, choose <strong>Open folder as vault</strong> and select the extracted folder
-containing <code class="docutils literal notranslate"><span class="pre">00-Start.md</span></code>. Keep the included <code class="docutils literal notranslate"><span class="pre">.obsidian</span></code> folder. Follow any
-first-start prompts and enable the supplied community plugins when asked.</p>
-</section>
-<section id="enter-the-workshop-api-key">
-<h2>3. Enter the workshop API key<a class="headerlink" href="#enter-the-workshop-api-key" title="Link to this heading">#</a></h2>
-<ol class="arabic simple">
-<li><p>Open <strong>Settings → Copilot → BYOK</strong>.</p></li>
-<li><p>Edit the prepared <strong><a class="reference external" href="http://ScaDS.AI">ScaDS.AI</a> provider</strong> and paste the key supplied through Nextcloud.</p></li>
-<li><p>Click <strong>Test</strong>, then <strong>Save</strong>.</p></li>
-</ol>
-<p>The key must be entered once on each computer and expires after the workshop.</p>
-</section>
-<section id="test-the-chat">
-<h2>4. Test the chat<a class="headerlink" href="#test-the-chat" title="Link to this heading">#</a></h2>
-<p>Open <code class="docutils literal notranslate"><span class="pre">01-Projects/Project-Brief.md</span></code>. In the command palette (<strong>Ctrl+P</strong> on
-Windows/Linux, <strong>Cmd+P</strong> on macOS), select <strong>Open Copilot Chat Window</strong>.
-Use the prepared workshop model in <strong>Chat</strong> mode.</p>
-<p>Attach <strong>Project-Brief</strong> using <strong><code class="docutils literal notranslate"><span class="pre">&#64;</span></code></strong> or <strong>Add context (+)</strong>, check its context
-badge, and send:</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>What is the target audience and requested output language in the attached brief?
+<section id="step-2-install-python-and-libraries">
+<h2>Step 2: Install Python and libraries<a class="headerlink" href="#step-2-install-python-and-libraries" title="Link to this heading">#</a></h2>
+<p>After Conda installation finished, use this command from the terminal:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">create</span> <span class="o">--</span><span class="n">name</span> <span class="n">llm</span><span class="o">-</span><span class="n">da</span> <span class="n">python</span><span class="o">=</span><span class="mf">3.11</span> <span class="o">-</span><span class="n">c</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span>
 </pre></div>
 </div>
-<p>Expected: prospective students without an AI background; German.
-Continue with <strong>Workshop-Guide</strong> in the vault or <a class="reference internal" href="obsidian-workshop.html"><span class="std std-doc">the workshop page</span></a>.
-Next time, simply reopen the same vault.</p>
-<p>For the optional Agent Chat exercise, follow <a class="reference external" href="https://www.obsidiancopilot.com/docs/getting-started">Copilot’s agent setup instructions</a>
-if an agent backend is not already prepared.</p>
-<p><em>Uses <a class="reference external" href="https://obsidian.md/">Obsidian</a> and <a class="reference external" href="https://www.obsidiancopilot.com/docs">Copilot for Obsidian</a>
-by Logan Yang.</em></p>
+<p>Afterwards, activate the environment:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">activate</span> <span class="n">llm</span><span class="o">-</span><span class="n">da</span>
+</pre></div>
+</div>
+<p>Install the libraries we plan to use during the training:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">bia</span><span class="o">-</span><span class="n">bob</span> <span class="n">python</span><span class="o">-</span><span class="n">dotenv</span> <span class="n">numpy</span> <span class="n">scipy</span> <span class="n">pandas</span> <span class="n">scikit</span><span class="o">-</span><span class="n">learn</span> <span class="n">scikit</span><span class="o">-</span><span class="n">image</span> <span class="n">jupyterlab</span> <span class="n">wordcloud</span>
+</pre></div>
+</div>
+</section>
+<section id="step-3-testing-the-installation">
+<h2>Step 3: Testing the installation<a class="headerlink" href="#step-3-testing-the-installation" title="Link to this heading">#</a></h2>
+<p>Whenever you want to work on the same project, you should start a command line and enter this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">activate</span> <span class="n">llm</span><span class="o">-</span><span class="n">da</span>
+</pre></div>
+</div>
+<p>Start <a class="reference external" href="https://jupyter.org/">Jupyter lab</a> from the terminal like this</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">jupyter</span> <span class="n">lab</span>
+</pre></div>
+</div>
+<p>A browser will open and show you the following web page. In the section <code class="docutils literal notranslate"><span class="pre">Notebook</span></code> click on “Python 3 (ipykernel)” to create a new notebook:</p>
+<p><img alt="img.png" src="images/start_jupyter_lab.png" /></p>
+<p>In the new notebook, click in the first code cell, enter <code class="docutils literal notranslate"><span class="pre">print(&quot;Hello</span> <span class="pre">world&quot;)</span></code> and hit SHIFT+ENTER on your keyboard.
+If everything is installed properly, it should look like this:</p>
+<p><img alt="img.png" src="_images/hello_world.png" /></p>
 </section>
 </section>
 
@@ -533,20 +530,20 @@ by Logan Yang.</em></p>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="langflow-setup.html"
+       href="obsidian-setup.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Preparing Langflow</p>
+        <p class="prev-next-title">Preparing Obsidian (optional)</p>
       </div>
     </a>
     <a class="right-next"
-       href="install_python.html"
+       href="translate_speech.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Python installation (optional)</p>
+        <p class="prev-next-title">Translating a speech</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -568,10 +565,9 @@ by Logan Yang.</em></p>
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-obsidian">1. Install Obsidian</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#open-the-prepared-vault">2. Open the prepared vault</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#enter-the-workshop-api-key">3. Enter the workshop API key</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test-the-chat">4. Test the chat</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-install-mini-forge">Step 1: Install Mini-forge</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-install-python-and-libraries">Step 2: Install Python and libraries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-testing-the-installation">Step 3: Testing the installation</a></li>
 </ul>
   </nav></div>
 

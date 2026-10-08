@@ -69,7 +69,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
-    <meta name="docbuild:last-update" content="2026-10-07"/>
+    <meta name="docbuild:last-update" content="2026-10-08"/>
   
     
     <script src="_static/searchtools.js"></script>
@@ -225,6 +225,7 @@
 <li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Preparing the session</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="langflow-setup.html">Preparing Langflow</a></li>
 <li class="toctree-l2"><a class="reference internal" href="obsidian-setup.html">Preparing Obsidian (optional)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install_python.html">Python installation (optional)</a></li>
 </ul>
 </details></li>
 </ul>
@@ -444,12 +445,7 @@
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#local-language-models">Local language models</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-setup-for-exercises-about-structuring-knowledge-optional">Advanced setup for exercises about structuring knowledge <strong>(optional)</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-setup-for-attendees-interested-in-ai-assisted-code-generation-for-text-analysis-optional">Basic setup for attendees interested in AI-assisted code generation for text analysis <strong>(optional)</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-setup-for-attendees-interested-in-ai-assisted-code-generation-for-text-analysis-optional">Advanced setup for attendees interested in AI-assisted code generation for text analysis <strong>(optional)</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-install-mini-forge">Step 1: Install Mini-forge</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-install-python-and-libraries">Step 2: Install Python and libraries</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-testing-the-installation">Step 3: Testing the installation</a></li>
-</ul>
-</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-setup-for-attendees-interested-in-ai-assisted-code-generation-for-text-analysis-optional">Advanced setup for attendees interested in AI-assisted code generation for text analysis <strong>(optional)</strong></a></li>
 </ul>
 </li>
 </ul>
@@ -503,46 +499,7 @@
 </section>
 <section id="advanced-setup-for-attendees-interested-in-ai-assisted-code-generation-for-text-analysis-optional">
 <h3>Advanced setup for attendees interested in AI-assisted code generation for text analysis <strong>(optional)</strong><a class="headerlink" href="#advanced-setup-for-attendees-interested-in-ai-assisted-code-generation-for-text-analysis-optional" title="Link to this heading">#</a></h3>
-<p>If you want to use AI-assistance in <a class="reference external" href="https://jupyter.org/">Jupyter Lab</a> on your own computer, make sure you have it installed together with Python and some libraries.</p>
-<p>One way of doing this, is by managing <em>Conda</em> environments (<a class="reference external" href="https://focalplane.biologists.com/2022/12/08/managing-scientific-python-environments-using-conda-mamba-and-friends/">read more</a></p>
-<section id="step-1-install-mini-forge">
-<h4>Step 1: Install Mini-forge<a class="headerlink" href="#step-1-install-mini-forge" title="Link to this heading">#</a></h4>
-<p>Download and install Conda. We recommend the Conda distribution <a class="reference external" href="https://conda-forge.org/download/">mini-forge</a>.</p>
-<p>For ease-of-use, it is recommended to install it for your use only and to add Conda to the PATH variable during installation.</p>
-<p><img alt="img.png" src="_images/miniforge1.png" /></p>
-<p><img alt="img.png" src="_images/miniforge2.png" /></p>
-</section>
-<section id="step-2-install-python-and-libraries">
-<h4>Step 2: Install Python and libraries<a class="headerlink" href="#step-2-install-python-and-libraries" title="Link to this heading">#</a></h4>
-<p>After Conda installation finished, use this command from the terminal:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">create</span> <span class="o">--</span><span class="n">name</span> <span class="n">llm</span><span class="o">-</span><span class="n">da</span> <span class="n">python</span><span class="o">=</span><span class="mf">3.11</span> <span class="o">-</span><span class="n">c</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span>
-</pre></div>
-</div>
-<p>Afterwards, activate the environment:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">activate</span> <span class="n">llm</span><span class="o">-</span><span class="n">da</span>
-</pre></div>
-</div>
-<p>Install the libraries we plan to use during the training:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">bia</span><span class="o">-</span><span class="n">bob</span> <span class="n">python</span><span class="o">-</span><span class="n">dotenv</span> <span class="n">numpy</span> <span class="n">scipy</span> <span class="n">pandas</span> <span class="n">scikit</span><span class="o">-</span><span class="n">learn</span> <span class="n">scikit</span><span class="o">-</span><span class="n">image</span> <span class="n">jupyterlab</span> <span class="n">wordcloud</span>
-</pre></div>
-</div>
-</section>
-<section id="step-3-testing-the-installation">
-<h4>Step 3: Testing the installation<a class="headerlink" href="#step-3-testing-the-installation" title="Link to this heading">#</a></h4>
-<p>Whenever you want to work on the same project, you should start a command line and enter this:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">activate</span> <span class="n">llm</span><span class="o">-</span><span class="n">da</span>
-</pre></div>
-</div>
-<p>Start <a class="reference external" href="https://jupyter.org/">Jupyter lab</a> from the terminal like this</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">jupyter</span> <span class="n">lab</span>
-</pre></div>
-</div>
-<p>A browser will open and show you the following web page. In the section <code class="docutils literal notranslate"><span class="pre">Notebook</span></code> click on “Python 3 (ipykernel)” to create a new notebook:</p>
-<p><img alt="img.png" src="images/start_jupyter_lab.png" /></p>
-<p>In the new notebook, click in the first code cell, enter <code class="docutils literal notranslate"><span class="pre">print(&quot;Hello</span> <span class="pre">world&quot;)</span></code> and hit SHIFT+ENTER on your keyboard.
-If everything is installed properly, it should look like this:</p>
-<p><img alt="img.png" src="_images/hello_world.png" /></p>
-</section>
+<p>If you prefer executing Python on your own computer and want to install an AI-assistant in Jupyter Lab, follow <a class="reference internal" href="install_python.html"><span class="std std-doc">these instructions</span></a>.</p>
 </section>
 </section>
 <div class="toctree-wrapper compound">
@@ -619,12 +576,7 @@ If everything is installed properly, it should look like this:</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#local-language-models">Local language models</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-setup-for-exercises-about-structuring-knowledge-optional">Advanced setup for exercises about structuring knowledge <strong>(optional)</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-setup-for-attendees-interested-in-ai-assisted-code-generation-for-text-analysis-optional">Basic setup for attendees interested in AI-assisted code generation for text analysis <strong>(optional)</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-setup-for-attendees-interested-in-ai-assisted-code-generation-for-text-analysis-optional">Advanced setup for attendees interested in AI-assisted code generation for text analysis <strong>(optional)</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-install-mini-forge">Step 1: Install Mini-forge</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-install-python-and-libraries">Step 2: Install Python and libraries</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-testing-the-installation">Step 3: Testing the installation</a></li>
-</ul>
-</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-setup-for-attendees-interested-in-ai-assisted-code-generation-for-text-analysis-optional">Advanced setup for attendees interested in AI-assisted code generation for text analysis <strong>(optional)</strong></a></li>
 </ul>
 </li>
 </ul>
@@ -653,7 +605,7 @@ By Robert Haase
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on 2026-10-07.
+  Last updated on 2026-10-08.
   <br/>
 </p>
   </div>
