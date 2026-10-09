@@ -69,7 +69,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
-    <meta name="docbuild:last-update" content="2026-10-08"/>
+    <meta name="docbuild:last-update" content="2026-10-09"/>
   
     
     <script src="_static/searchtools.js"></script>
@@ -444,7 +444,10 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-uv">1. Install uv</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#download-the-scripts">2. Download the scripts</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-langflow-once">3. Install Langflow (once)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#start-and-import-the-prepared-flow">4. Start and import the prepared flow</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#start-and-import-the-prepared-flow">4. Start and import the prepared flow</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if-you-ve-made-it-this-far-congratulations-you-re-all-set-for-the-workshop">If you’ve made it this far: Congratulations— you’re all set for the workshop!</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -521,17 +524,28 @@
 </pre></div>
 </div>
 <p>Keep the terminal open and open <a class="reference external" href="http://127.0.0.1:7860">http://127.0.0.1:7860</a> (or the address printed
-in the terminal).</p>
+in the terminal). When asked on the startpage click <code class="docutils literal notranslate"><span class="pre">Create</span> <span class="pre">First</span> <span class="pre">Flow</span></code> and afterwards close this empty flow as you click on <code class="docutils literal notranslate"><span class="pre">Starter</span> <span class="pre">Project</span></code> (on top of the page in the middle). You should be in project view now. In general you dan also click the icon on the top left corner (Langflow Logo) to go back to project or startpage view.</p>
 <p>Download <code class="docutils literal notranslate"><span class="pre">langflow-workshop.json</span></code> from <a class="reference external" href="https://cloud.scadsai.uni-leipzig.de/index.php/s/Egy8BGX4wAX4dXH">Nextcloud</a>.
 The password is in the preparation email; the link is valid until <strong>31.12.2026</strong>.
-The included API keys expire after the workshop.</p>
-<p>In Langflow: <strong>Projects → Upload a flow → select the JSON → open
-AI4Translatology — Translation team → Playground</strong>. Test with:</p>
+The workshop API key expires after the workshop. For using it with your local setup see the <strong>Hint</strong> down below at the end of this page.</p>
+<p>Next is settings: From the startpage/project view in Langflow go to: <strong>Settings (icon in the top right corner) → choose Model Providers → check for vLLM (maybe enable first) → check <code class="docutils literal notranslate"><span class="pre">base_url</span></code> (if empty set <code class="docutils literal notranslate"><span class="pre">https://llm.scads.ai/v1</span></code>) → input the provided API-Key for the workshop (see Nextcloud) → in <code class="docutils literal notranslate"><span class="pre">Language</span> <span class="pre">Models</span></code> enable Qwen3.8, Gemma4 and in <code class="docutils literal notranslate"><span class="pre">Embedding</span> <span class="pre">Models</span></code> enable Qwen3-Embedding → now you should be ready to go!</strong></p>
+<p><img alt="" src="_images/langflow_setting_modelprovider.png" /></p>
+<p>Let’s import the prepared setup (<code class="docutils literal notranslate"><span class="pre">langflow-workshop.json</span></code>) and test it, so go back to the startpage of Langflow and: <strong>in Projects → click Upload a flow → select the JSON (<code class="docutils literal notranslate"><span class="pre">langflow-workshop.json</span></code>, the one from Nextcloud)</strong></p>
+<p><img alt="" src="_images/langflow_upload_json.png" /></p>
+<p>Then: <strong>open “AI4Translatology — Translation team” flow → Check that every <code class="docutils literal notranslate"><span class="pre">Agent-Node</span></code> has Qwen3.8 or Gemma4 set as <code class="docutils literal notranslate"><span class="pre">Language</span> <span class="pre">Model</span></code> → open Playground (top right of the flow view)</strong>.  Test with:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Translate into German: This workshop explores AI-assisted translation.
 </pre></div>
 </div>
+<p>Be aware that there should be a prefilled prompt (you can set this in the <code class="docutils literal notranslate"><span class="pre">Chat-Input-Node</span></code>).</p>
+<p><img alt="" src="_images/langflow_flow.png" /></p>
+<section id="if-you-ve-made-it-this-far-congratulations-you-re-all-set-for-the-workshop">
+<h3>If you’ve made it this far: Congratulations— you’re all set for the workshop!<a class="headerlink" href="#if-you-ve-made-it-this-far-congratulations-you-re-all-set-for-the-workshop" title="Link to this heading">#</a></h3>
 <p>For later sessions, run only the start command. Continue with
 <a class="reference internal" href="langflow-workshop.html"><span class="std std-doc">the workshop</span></a>.</p>
+<p><strong>Hint</strong></p>
+<p>For using the materials after the workshop when the workshop API-Key has expired you could e.g. think of using <a class="reference internal" href="#httpos://jan.ai"><span class="xref myst">Jan.ai</span></a> or any other local llm engine.
+You can connect Langflow to <em><a class="reference external" href="http://Jan.ai">Jan.ai</a></em>s Local API Server, see the offical docs <a class="reference external" href="https://www.jan.ai/docs/desktop/api-server">here</a> and follow the instructions. In langflow you’d need to go to settings again and add an <code class="docutils literal notranslate"><span class="pre">OpenAI</span> <span class="pre">Compatible</span></code> provider in the Model Provider section. Just add the <code class="docutils literal notranslate"><span class="pre">base_url</span></code> from the <em><a class="reference external" href="http://Jan.ai">Jan.ai</a></em> settings to Langflow and this should be it. In a local setup you shouldn’t need an API-Key.</p>
+</section>
 </section>
 </section>
 
@@ -604,7 +618,10 @@ AI4Translatology — Translation team → Playground</strong>. Test with:</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-uv">1. Install uv</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#download-the-scripts">2. Download the scripts</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-langflow-once">3. Install Langflow (once)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#start-and-import-the-prepared-flow">4. Start and import the prepared flow</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#start-and-import-the-prepared-flow">4. Start and import the prepared flow</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if-you-ve-made-it-this-far-congratulations-you-re-all-set-for-the-workshop">If you’ve made it this far: Congratulations— you’re all set for the workshop!</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
@@ -631,7 +648,7 @@ By Robert Haase
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on 2026-10-08.
+  Last updated on 2026-10-09.
   <br/>
 </p>
   </div>

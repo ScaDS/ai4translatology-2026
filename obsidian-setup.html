@@ -69,7 +69,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
-    <meta name="docbuild:last-update" content="2026-10-08"/>
+    <meta name="docbuild:last-update" content="2026-10-09"/>
   
     
     <script src="_static/searchtools.js"></script>
@@ -443,7 +443,6 @@
                 <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-obsidian">1. Install Obsidian</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#open-the-prepared-vault">2. Open the prepared vault</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#enter-the-workshop-api-key">3. Enter the workshop API key</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test-the-chat">4. Test the chat</a></li>
 </ul>
             </nav>
@@ -468,37 +467,60 @@ and follow the installer’s instructions.</p>
 <section id="open-the-prepared-vault">
 <h2>2. Open the prepared vault<a class="headerlink" href="#open-the-prepared-vault" title="Link to this heading">#</a></h2>
 <p>Download and extract the vault from <a class="reference external" href="https://cloud.scadsai.uni-leipzig.de/index.php/s/Egy8BGX4wAX4dXH">Nextcloud</a>.
-The password is in the preparation email; the link is valid until <strong>31.12.2026</strong>.</p>
+The password is in the preparation email; the link is valid until <strong>31.12.2026</strong>. The workshop API-Key expires right after the workshop.
+For using obsidian and the copilot with your local setup see the <strong>Hint</strong> down below at the end of this page.</p>
 <p>In Obsidian, choose <strong>Open folder as vault</strong> and select the extracted folder
-containing <code class="docutils literal notranslate"><span class="pre">00-Start.md</span></code>. Keep the included <code class="docutils literal notranslate"><span class="pre">.obsidian</span></code> folder. Follow any
-first-start prompts and enable the supplied community plugins when asked.</p>
-</section>
-<section id="enter-the-workshop-api-key">
-<h2>3. Enter the workshop API key<a class="headerlink" href="#enter-the-workshop-api-key" title="Link to this heading">#</a></h2>
-<ol class="arabic simple">
-<li><p>Open <strong>Settings → Copilot → BYOK</strong>.</p></li>
-<li><p>Edit the prepared <strong><a class="reference external" href="http://ScaDS.AI">ScaDS.AI</a> provider</strong> and paste the key supplied through Nextcloud.</p></li>
-<li><p>Click <strong>Test</strong>, then <strong>Save</strong>.</p></li>
+<code class="docutils literal notranslate"><span class="pre">ai4translatology-obsidian-vault</span></code>. Keep the included <code class="docutils literal notranslate"><span class="pre">.obsidian</span></code> and all other folders- these include the prepared setting. Follow any
+first-start prompts and enable the supplied community plugins when asked. The procedure should be as follows:</p>
+<ol class="arabic">
+<li><p><strong>Trust the vault:</strong></p>
+<p><img alt="" src="_images/obsidian_vault_approve.png" /></p>
+</li>
+<li><p><strong>Configure Opencode (LLM/Agent-Harness)</strong></p>
+<p><img alt="" src="_images/obsidian_configure_opencode.png" /></p>
+</li>
+<li><p><strong>Download &amp; Install Opencode</strong></p>
+<p><img alt="" src="_images/obsidian_download_install.png" /></p>
+</li>
+<li><p><strong>Configure the Copilot Plugin</strong></p>
+<ul class="simple">
+<li><p>Click the Setting-Icon (down left)</p></li>
+<li><p>Choose Copilot in the right menu</p></li>
+<li><p>Click <code class="docutils literal notranslate"><span class="pre">BYOK</span></code> in the Copilot Settings</p></li>
+<li><p>For <code class="docutils literal notranslate"><span class="pre">llm_scads</span></code> click the setting icon (three points)</p></li>
+</ul>
+<p><img alt="" src="_images/obsidian_configure_copilot.png" /></p>
+</li>
+<li><p><strong>Configure llm_scads</strong></p>
+<ul class="simple">
+<li><p>Enter provided workshop API-Key (see Nextcloud!)</p></li>
+<li><p>Click <code class="docutils literal notranslate"><span class="pre">Test</span></code></p></li>
+<li><p>Now there should be written <code class="docutils literal notranslate"><span class="pre">verified</span></code> and the available models should be listed down below (keep the model selection)</p></li>
+<li><p>Click <code class="docutils literal notranslate"><span class="pre">Save</span></code></p></li>
+</ul>
+<p><img alt="" src="_images/obsidian_tud-ai.png" /></p>
+</li>
+<li><p><strong>Restart Obsidian!</strong></p></li>
 </ol>
-<p>The key must be entered once on each computer and expires after the workshop.</p>
 </section>
 <section id="test-the-chat">
 <h2>4. Test the chat<a class="headerlink" href="#test-the-chat" title="Link to this heading">#</a></h2>
-<p>Open <code class="docutils literal notranslate"><span class="pre">01-Projects/Project-Brief.md</span></code>. In the command palette (<strong>Ctrl+P</strong> on
-Windows/Linux, <strong>Cmd+P</strong> on macOS), select <strong>Open Copilot Chat Window</strong>.
-Use the prepared workshop model in <strong>Chat</strong> mode.</p>
-<p>Attach <strong>Project-Brief</strong> using <strong><code class="docutils literal notranslate"><span class="pre">&#64;</span></code></strong> or <strong>Add context (+)</strong>, check its context
-badge, and send:</p>
+<p>Open e.g. <code class="docutils literal notranslate"><span class="pre">Workshop-Guide.md</span></code>. Select the respective LLM in the copilot on the right (should be e.g. <code class="docutils literal notranslate"><span class="pre">llm_scads/Qwen/Qwen3.8-27B</span></code>).</p>
+<p><img alt="" src="_images/obsidian_set_chat.png" /></p>
+<p>Attach <strong>Project-Brief</strong> or the whole <strong>01-Projects</strong> Folder using <strong><code class="docutils literal notranslate"><span class="pre">&#64;</span></code></strong> or <strong>Add context (+)</strong>.</p>
+<p><img alt="" src="_images/obsidian_general_chat.png" /></p>
+<p>Check its context badge, and send:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>What is the target audience and requested output language in the attached brief?
 </pre></div>
 </div>
-<p>Expected: prospective students without an AI background; German.
+<p><em>Expected</em>: prospective students without an AI background; German.
 Continue with <strong>Workshop-Guide</strong> in the vault or <a class="reference internal" href="obsidian-workshop.html"><span class="std std-doc">the workshop page</span></a>.
 Next time, simply reopen the same vault.</p>
-<p>For the optional Agent Chat exercise, follow <a class="reference external" href="https://www.obsidiancopilot.com/docs/getting-started">Copilot’s agent setup instructions</a>
-if an agent backend is not already prepared.</p>
 <p><em>Uses <a class="reference external" href="https://obsidian.md/">Obsidian</a> and <a class="reference external" href="https://www.obsidiancopilot.com/docs">Copilot for Obsidian</a>
 by Logan Yang.</em></p>
+<p><strong>Hint</strong></p>
+<p>For using the materials after the workshop when the workshop API-Key has expired you could e.g. think of using <a class="reference internal" href="#httpos://jan.ai"><span class="xref myst">Jan.ai</span></a> or any other local llm engine.
+You can connect obsidian and the copilot to <em><a class="reference external" href="http://Jan.ai">Jan.ai</a></em>s Local API Server, see the offical docs <a class="reference external" href="https://www.jan.ai/docs/desktop/api-server">here</a> and follow the instructions. In obsidian you’d need to go to settings and add a <code class="docutils literal notranslate"><span class="pre">byok</span></code> provider for copilot. In copilot <code class="docutils literal notranslate"><span class="pre">byok</span></code> setting click <code class="docutils literal notranslate"><span class="pre">+</span> <span class="pre">Add</span> <span class="pre">a</span> <span class="pre">Provider</span></code>, then click <code class="docutils literal notranslate"><span class="pre">+</span> <span class="pre">Add</span> <span class="pre">a</span> <span class="pre">custom</span> <span class="pre">Provider</span></code>. Just add the <code class="docutils literal notranslate"><span class="pre">base_url</span></code> from the <em><a class="reference external" href="http://Jan.ai">Jan.ai</a></em> settings, entry the respective <em><a class="reference external" href="http://Jan.ai">Jan.ai</a></em> local model you have and this should be it. In a local setup you shouldn’t need an API-Key. Our vault settings should come with this already prepared but possibly with the <strong>wrong Modelname</strong>- so check the settings.</p>
 </section>
 </section>
 
@@ -570,7 +592,6 @@ by Logan Yang.</em></p>
     <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-obsidian">1. Install Obsidian</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#open-the-prepared-vault">2. Open the prepared vault</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#enter-the-workshop-api-key">3. Enter the workshop API key</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test-the-chat">4. Test the chat</a></li>
 </ul>
   </nav></div>
@@ -598,7 +619,7 @@ By Robert Haase
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on 2026-10-08.
+  Last updated on 2026-10-09.
   <br/>
 </p>
   </div>

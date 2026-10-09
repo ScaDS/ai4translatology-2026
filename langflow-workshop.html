@@ -69,7 +69,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
-    <meta name="docbuild:last-update" content="2026-10-08"/>
+    <meta name="docbuild:last-update" content="2026-10-09"/>
   
     
     <script src="_static/searchtools.js"></script>
@@ -530,7 +530,7 @@ make them different helpers, not independent experts or differently trained mode
 </section>
 <section id="task-1-watch-the-team-work-10-minutes">
 <h2>Task 1 — Watch the team work (10 minutes)<a class="headerlink" href="#task-1-watch-the-team-work-10-minutes" title="Link to this heading">#</a></h2>
-<p>Open <strong>Playground</strong> and send this request:</p>
+<p>Open <strong>Playground</strong> and send this request (the request has already been placed by the template prompt in the <code class="docutils literal notranslate"><span class="pre">Chat-Input-Node</span></code>):</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Translate into German for prospective students without an AI background.
 Call the terminology specialist, translator and reviewer. Follow the project
 wording rules, then return the translation and terminology decisions.
@@ -558,8 +558,9 @@ and the connection that makes that specialist available to the coordinator.</p>
 </section>
 <section id="task-2-make-a-helper-work-the-way-you-want-10-minutes">
 <h2>Task 2 — Make a helper work the way you want (10 minutes)<a class="headerlink" href="#task-2-make-a-helper-work-the-way-you-want-10-minutes" title="Link to this heading">#</a></h2>
-<p>Select <strong>Translation reviewer</strong> on the canvas and open <strong>Agent Instructions</strong>.
-Read its existing role, then append:</p>
+<p>Select <strong>Translation reviewer</strong> on the canvas and open <strong>Agent Instructions</strong>.</p>
+<p><img alt="" src="_images/langflow_instruct_agent.png" /></p>
+<p>Read its existing role, then append:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>For this task, prioritise accessibility for readers without an AI background.
 Identify up to three expressions that may need an explanation. Quote each
 expression and suggest a short explanation separately from the translation.
@@ -585,21 +586,19 @@ one specialist a way to find external information about a real corpus resource.<
 <section id="connect-the-tool">
 <h3>Connect the tool<a class="headerlink" href="#connect-the-tool" title="Link to this heading">#</a></h3>
 <ol class="arabic">
-<li><p>Return to the canvas. Search the component list for <strong>Web Search</strong> and drag
-the built-in component onto the canvas.</p></li>
-<li><p>Set <strong>Search Mode</strong> to <strong>Web</strong>. In its inspection panel, set <strong>Max Results</strong>
-to <code class="docutils literal notranslate"><span class="pre">3</span></code> and <strong>Max Content Length</strong> to <code class="docutils literal notranslate"><span class="pre">1000</span></code> for a small, readable result set.</p></li>
-<li><p>Open the Web Search component’s header menu and enable <strong>Tool Mode</strong>.</p></li>
+<li><p>Return to the canvas. And look for <code class="docutils literal notranslate"><span class="pre">Other</span> <span class="pre">Tools</span></code> and the <code class="docutils literal notranslate"><span class="pre">Websearch-Tool</span></code>.</p></li>
 <li><p>Drag its <strong>Toolset</strong> output to the <strong>Tools</strong> input of <strong>Terminology specialist</strong>.
 Keep the specialist’s existing connection to the coordinator.</p></li>
-<li><p>Open <strong>Edit Tool Actions</strong> on Web Search. Give the search action the slug
-<code class="docutils literal notranslate"><span class="pre">search_corpus_documentation</span></code> and this description:</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Search for official corpus documentation and public usage guidance.
+<li><p>Open <strong>Agent Instructions</strong> of the <code class="docutils literal notranslate"><span class="pre">Terminology</span> <span class="pre">Agent</span></code>. Add the following to the instructions:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>You are equipped with a websearch tool. Whenever asked, search the internet 
+e.g. for official corpus documentation and public usage guidance.
 Use this to find sources and access information, not to invent corpus counts.
 </pre></div>
 </div>
 </li>
 </ol>
+<p><img alt="" src="_images/langflow_websearch.png" /></p>
+<p>Feel free to test connecting this tool to the <code class="docutils literal notranslate"><span class="pre">main</span> <span class="pre">agent</span></code> too. What happens then- any differences?</p>
 <p>The built-in Web Search component uses DuckDuckGo in Web mode and does not
 need a separate search-service account for this exercise.</p>
 </section>
@@ -659,10 +658,12 @@ Do not invent speakers, facts, pronunciations or event details.
 </pre></div>
 </div>
 </li>
+</ol>
+<p><img alt="" src="_images/langflow_new_agent.png" /></p>
+<ol class="arabic" start="4">
 <li><p>Enable <strong>Tool Mode</strong>. In <strong>Edit Tool Actions</strong>, enable the normal-response
-action, give it the slug <code class="docutils literal notranslate"><span class="pre">prepare_interpreting</span></code>, and describe it as
-<code class="docutils literal notranslate"><span class="pre">Prepare</span> <span class="pre">an</span> <span class="pre">interpreting</span> <span class="pre">checklist</span> <span class="pre">and</span> <span class="pre">candidate</span> <span class="pre">glossary</span> <span class="pre">from</span> <span class="pre">an</span> <span class="pre">event</span> <span class="pre">brief</span></code>.
-Disable the structured-response action for this exercise.</p></li>
+action (here seen as “MY_NEW_AGENT”), change it via the <code class="docutils literal notranslate"><span class="pre">settings</span> <span class="pre">icon</span></code> give it the <em>slug</em> <code class="docutils literal notranslate"><span class="pre">prepare_interpreting</span></code>, and describe it as
+<code class="docutils literal notranslate"><span class="pre">Prepare</span> <span class="pre">an</span> <span class="pre">interpreting</span> <span class="pre">checklist</span> <span class="pre">and</span> <span class="pre">candidate</span> <span class="pre">glossary</span> <span class="pre">from</span> <span class="pre">an</span> <span class="pre">event</span> <span class="pre">brief</span></code>.</p></li>
 <li><p>Connect its <strong>Toolset</strong> output to the coordinator’s <strong>Tools</strong> input.</p></li>
 <li><p>Append to the coordinator’s instructions:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>For interpreting-preparation requests, call prepare_interpreting with the
@@ -672,6 +673,7 @@ Do not run the translation-and-review workflow unless translation is requested.
 </div>
 </li>
 </ol>
+<p><img alt="" src="_images/langflow_agent_settings.png" /></p>
 <p>Test in a new Playground conversation:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Use the interpreting preparation helper for this fictional event brief:
 A university panel discusses machine translation, translation memories and
@@ -807,7 +809,7 @@ By Robert Haase
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on 2026-10-08.
+  Last updated on 2026-10-09.
   <br/>
 </p>
   </div>

@@ -69,7 +69,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
-    <meta name="docbuild:last-update" content="2026-10-08"/>
+    <meta name="docbuild:last-update" content="2026-10-09"/>
   
     
     <script src="_static/searchtools.js"></script>
@@ -446,10 +446,8 @@
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-1-make-everyday-project-work-easier-10-minutes">Task 1 — Make everyday project work easier (10 minutes)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-2-build-a-small-source-based-llm-wiki-15-minutes">Task 2 — Build a small source-based LLM wiki (15 minutes)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-extension-let-an-agent-maintain-the-wiki-1015-minutes">Optional extension — Let an agent maintain the wiki (10–15 minutes)</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-2-build-a-small-source-based-llm-wiki-15-minutes">Task 2 — Build a small source-based LLM wiki (15 minutes)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#let-an-agent-maintain-the-wiki-1015-minutes">Let an agent maintain the wiki (10–15 minutes)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-3-a-translation-copilot-with-wording-lookup-and-corpus-evidence-20-minutes">Task 3 — A translation copilot with wording lookup and corpus evidence (20 minutes)</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-baseline">A. Baseline</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-context-aware-translation">B. Context-aware translation</a></li>
@@ -468,10 +466,13 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="structure-search-and-reuse-your-translation-knowledge">
+  <blockquote>
+<div><p>Workshop guide generated from the Jupyter Book source. Your working notes and agent instructions are in this vault.</p>
+</div></blockquote>
+<section class="tex2jax_ignore mathjax_ignore" id="structure-search-and-reuse-your-translation-knowledge">
 <h1>Structure, search and reuse your translation knowledge<a class="headerlink" href="#structure-search-and-reuse-your-translation-knowledge" title="Link to this heading">#</a></h1>
 <p><strong>Optional track · approximately 45–60 minutes · no coding required</strong></p>
-<p>Use this track during the workshop or take it home after exploring Langflow. Start with <a class="reference internal" href="obsidian-setup.html"><span class="std std-doc">Preparing Obsidian</span></a>. The exercises use the note set in the prepared Nextcloud vault. All sample project documents and corpus passages are <strong>fictional teaching material</strong> written for this workshop.</p>
+<p>Use this track during the workshop or take it home after exploring Langflow. Start with <a class="reference external" href="https://scads.github.io/ai4translatology-2026/obsidian-setup.html">Preparing Obsidian</a>. The exercises use the note set in the prepared Nextcloud vault. All sample project documents and corpus passages are <strong>fictional teaching material</strong> written for this workshop.</p>
 <p>Our question: <strong>How can a small, inspectable knowledge workspace make everyday translation work easier?</strong></p>
 <p>You will produce:</p>
 <ul class="simple">
@@ -485,11 +486,9 @@
 <h3>Open a note and give it to Copilot<a class="headerlink" href="#open-a-note-and-give-it-to-copilot" title="Link to this heading">#</a></h3>
 <ol class="arabic simple">
 <li><p>In Obsidian’s left file explorer, expand a folder and click a note to read it.</p></li>
-<li><p>Open the command palette (<strong>Ctrl+P</strong> on Windows/Linux, <strong>Cmd+P</strong> on macOS) and
-run <strong>Open Copilot Chat Window</strong>. Use <strong>Chat / Quick Chat</strong> with the workshop model.</p></li>
-<li><p>In the chat input, type <strong><code class="docutils literal notranslate"><span class="pre">&#64;</span></code></strong>, choose the note/context picker and select
-the note by name. Repeat for each required note. Alternatively, use
-<strong>Add context (+)</strong> to select notes.</p></li>
+<li><p>In the chat input (on the right, copilot &amp; opencode), type <strong><code class="docutils literal notranslate"><span class="pre">&#64;</span></code></strong>, choose the note/context or a complete folder and select
+it. Repeat for each required note. Alternatively, use
+<strong>Add context (+)</strong> next to the model-selection underneath the chat-input to select notes.</p></li>
 <li><p>Check the <strong>context badges above the input</strong>: they show the notes or
 selections included with your request. Remove unrelated ones with <strong>×</strong>.</p></li>
 <li><p>Paste the task prompt and send it. Read the result, then check it against the notes.</p></li>
@@ -573,14 +572,15 @@ confirmed project requirement.</p>
 </section>
 <section id="task-2-build-a-small-source-based-llm-wiki-15-minutes">
 <h2>Task 2 — Build a small source-based LLM wiki (15 minutes)<a class="headerlink" href="#task-2-build-a-small-source-based-llm-wiki-15-minutes" title="Link to this heading">#</a></h2>
-<p>Here, an <strong>LLM wiki</strong> means a linked set of knowledge notes drafted with AI and reviewed against sources. It is not a collection of unverified model answers.</p>
+<p>Here, an <strong>LLM wiki</strong> means a linked set of knowledge notes drafted with AI and reviewed against sources. It is not a collection of unverified model answers.
+The concept was published by <a class="reference external" href="https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f">A. Karpathy in a gist that you can read here</a>.</p>
 <ol class="arabic simple">
 <li><p>Expand <code class="docutils literal notranslate"><span class="pre">02-Sources</span></code> and read the three <strong>Source-A/B/C</strong> notes. Find passage
 <strong>C2</strong> in <strong>Source-C-Review</strong>: this is evidence, not a translation assignment.</p></li>
 <li><p>In a new chat, attach <strong>Source-C-Review</strong> and ask: <code class="docutils literal notranslate"><span class="pre">What</span> <span class="pre">does</span> <span class="pre">C2</span> <span class="pre">say</span> <span class="pre">about</span> <span class="pre">using</span> <span class="pre">a</span> <span class="pre">second</span> <span class="pre">LLM</span> <span class="pre">as</span> <span class="pre">a</span> <span class="pre">reviewer?</span> <span class="pre">Quote</span> <span class="pre">the</span> <span class="pre">passage.</span></code> Check the quote.</p></li>
 <li><p>Open <code class="docutils literal notranslate"><span class="pre">08-Templates/Wiki-Entry.md</span></code> and copy its contents. Right-click
 <code class="docutils literal notranslate"><span class="pre">05-Wiki</span></code>, choose <strong>New note</strong>, name it <strong>Terminology-aware translation</strong>,
-and paste the template. No template plugin is needed.</p></li>
+and paste the template.</p></li>
 <li><p>Start a new chat and attach <strong>Source-A-Workflow</strong>, <strong>Source-B-Terminology</strong>,
 <strong>Source-C-Review</strong> and <strong>Wiki-Entry</strong>. Verify all four context badges.
 Use the prompt below, also stored as <strong>Wiki-Builder</strong>:</p></li>
@@ -597,20 +597,15 @@ If not, say so. Do not invent publications, URLs or evidence.
 <code class="docutils literal notranslate"><span class="pre">02-Sources</span></code>. Rewrite or remove unsupported claims. In <strong>Wiki-Index</strong>, add
 <code class="docutils literal notranslate"><span class="pre">[[Terminology-aware</span> <span class="pre">translation]]</span></code> under <strong>Draft entries</strong>. Move it to
 <strong>Reviewed entries</strong> and set its status to <strong>reviewed</strong> only after your checks.</p>
-<p>Reattach the three source notes and try: <code class="docutils literal notranslate"><span class="pre">What</span> <span class="pre">do</span> <span class="pre">these</span> <span class="pre">sources</span> <span class="pre">say</span> <span class="pre">about</span> <span class="pre">comparative</span> <span class="pre">BLEU</span> <span class="pre">scores?</span></code> They contain no such results. Record whether Copilot
-acknowledges that gap.</p>
-<p><strong>Discuss:</strong> What makes the wiki useful later: fluent prose, evidence, links, or recorded uncertainty? Does a convincing citation actually support the sentence it accompanies?</p>
-<section id="optional-extension-let-an-agent-maintain-the-wiki-1015-minutes">
-<h3>Optional extension — Let an agent maintain the wiki (10–15 minutes)<a class="headerlink" href="#optional-extension-let-an-agent-maintain-the-wiki-1015-minutes" title="Link to this heading">#</a></h3>
-<p>Use this extension if the workshop vault has a working <strong>Agent Chat</strong> backend,
-or try it later at home. The core tasks still work in Quick Chat. Follow the
-<a class="reference internal" href="obsidian-setup.html"><span class="std std-doc">optional Agent Chat preparation</span></a>
-if needed.</p>
-<p>Open the vault-root <strong><a class="reference external" href="http://AGENTS.md">AGENTS.md</a></strong> and <strong>05-Wiki/AGENTS.md</strong>. The first file is a
-router: it tells the agent where to start. The second defines the wiki schema
-and maintenance workflow. Check <strong>Wiki-Index</strong>, <strong>Overview</strong> and <strong>Change-Log</strong>
-before requesting a change.</p>
-<p>Open <strong>Copilot Agent Chat</strong> and send:</p>
+<p>Reattach the three source notes and try: <code class="docutils literal notranslate"><span class="pre">What</span> <span class="pre">do</span> <span class="pre">these</span> <span class="pre">sources</span> <span class="pre">say</span> <span class="pre">about</span> <span class="pre">comparative</span> <span class="pre">BLEU</span> <span class="pre">scores?</span></code>
+The twist: <em>They contain no such results.</em> Record whether Copilot
+acknowledges that gap- correct answers based on context are the foundation of a decent, accurate LLM-Wiki.</p>
+<p><strong>You are now set for your own LLM-Wiki.</strong></p>
+</section>
+<section id="let-an-agent-maintain-the-wiki-1015-minutes">
+<h2>Let an agent maintain the wiki (10–15 minutes)<a class="headerlink" href="#let-an-agent-maintain-the-wiki-1015-minutes" title="Link to this heading">#</a></h2>
+<p>Open a new chat and attach the vault-root <a class="reference external" href="http://AGENTS.md">AGENTS.md</a> and 05-Wiki/AGENTS.md (with <strong>&#64;</strong> or <strong>+</strong>). The first file is a router: it tells the agent where to start. The second defines the wiki schema and maintenance workflow. Check Wiki-Index, Overview and Change-Log before requesting a change.</p>
+<p>In Copilot Chat send:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Read the vault-root AGENTS.md, then 05-Wiki/AGENTS.md and Wiki-Index.md.
 Using only Source-A-Workflow, Source-B-Terminology and Source-C-Review,
 create or update a draft entry on terminology-aware translation.
@@ -620,16 +615,10 @@ Do not mark anything as human-reviewed. Report the files you changed and
 the claims that still need checking.
 </pre></div>
 </div>
-<p>Inspect the changed notes. Did the agent follow the schema, preserve sources,
-add working links and leave its entry as a draft? Verify at least two quotes
-yourself. Only you can mark the entry as reviewed after checking it.</p>
-<p>If you use <strong>Quick Chat</strong>, attach both instruction files, the three sources,
-the template and the index explicitly. Ask for proposed note contents, then
-save and link them yourself. Quick Chat does not automatically read <code class="docutils literal notranslate"><span class="pre">AGENTS.md</span></code>
-or perform the same file-maintenance workflow.</p>
-<p><strong>Checkpoint:</strong> You can delegate drafting and linking while keeping the
-evidence, review status and maintenance history visible.</p>
-</section>
+<p>Inspect the changed notes. Did the agent follow the schema, preserve sources, add working links and leave its entry as a draft? Verify at least two quotes yourself. Only you can mark the entry as reviewed after checking it.
+Try also to add or change information. What happens? Could this serve as a knowledge base maintained by an LLM? Ask it questions to answer this.</p>
+<p>Checkpoint: You can delegate drafting and linking while keeping the evidence, review status and maintenance history visible.</p>
+<p><strong>Discuss:</strong> What makes the wiki useful: how would you maintain such a wiki and what use-cases could you think of?</p>
 </section>
 <section id="task-3-a-translation-copilot-with-wording-lookup-and-corpus-evidence-20-minutes">
 <h2>Task 3 — A translation copilot with wording lookup and corpus evidence (20 minutes)<a class="headerlink" href="#task-3-a-translation-copilot-with-wording-lookup-and-corpus-evidence-20-minutes" title="Link to this heading">#</a></h2>
@@ -779,10 +768,8 @@ Copy accepted/rejected findings into <code class="docutils literal notranslate">
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-1-make-everyday-project-work-easier-10-minutes">Task 1 — Make everyday project work easier (10 minutes)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-2-build-a-small-source-based-llm-wiki-15-minutes">Task 2 — Build a small source-based LLM wiki (15 minutes)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-extension-let-an-agent-maintain-the-wiki-1015-minutes">Optional extension — Let an agent maintain the wiki (10–15 minutes)</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-2-build-a-small-source-based-llm-wiki-15-minutes">Task 2 — Build a small source-based LLM wiki (15 minutes)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#let-an-agent-maintain-the-wiki-1015-minutes">Let an agent maintain the wiki (10–15 minutes)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-3-a-translation-copilot-with-wording-lookup-and-corpus-evidence-20-minutes">Task 3 — A translation copilot with wording lookup and corpus evidence (20 minutes)</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-baseline">A. Baseline</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-context-aware-translation">B. Context-aware translation</a></li>
@@ -816,7 +803,7 @@ By Robert Haase
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on 2026-10-08.
+  Last updated on 2026-10-09.
   <br/>
 </p>
   </div>

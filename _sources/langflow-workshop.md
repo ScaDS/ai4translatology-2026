@@ -42,7 +42,7 @@ make them different helpers, not independent experts or differently trained mode
 
 ## Task 1 — Watch the team work (10 minutes)
 
-Open **Playground** and send this request:
+Open **Playground** and send this request (the request has already been placed by the template prompt in the `Chat-Input-Node`):
 
 ```text
 Translate into German for prospective students without an AI background.
@@ -75,6 +75,9 @@ and the connection that makes that specialist available to the coordinator.
 ## Task 2 — Make a helper work the way you want (10 minutes)
 
 Select **Translation reviewer** on the canvas and open **Agent Instructions**.
+
+![](images/langflow_instruct_agent.png)
+
 Read its existing role, then append:
 
 ```text
@@ -104,20 +107,20 @@ one specialist a way to find external information about a real corpus resource.
 
 ### Connect the tool
 
-1. Return to the canvas. Search the component list for **Web Search** and drag
-   the built-in component onto the canvas.
-2. Set **Search Mode** to **Web**. In its inspection panel, set **Max Results**
-   to `3` and **Max Content Length** to `1000` for a small, readable result set.
-3. Open the Web Search component's header menu and enable **Tool Mode**.
-4. Drag its **Toolset** output to the **Tools** input of **Terminology specialist**.
+1. Return to the canvas. And look for `Other Tools` and the `Websearch-Tool`.
+2. Drag its **Toolset** output to the **Tools** input of **Terminology specialist**.
    Keep the specialist's existing connection to the coordinator.
-5. Open **Edit Tool Actions** on Web Search. Give the search action the slug
-   `search_corpus_documentation` and this description:
+5. Open **Agent Instructions** of the `Terminology Agent`. Add the following to the instructions:
 
    ```text
-   Search for official corpus documentation and public usage guidance.
+   You are equipped with a websearch tool. Whenever asked, search the internet 
+   e.g. for official corpus documentation and public usage guidance.
    Use this to find sources and access information, not to invent corpus counts.
    ```
+
+![](images/langflow_websearch.png)
+
+Feel free to test connecting this tool to the `main agent` too. What happens then- any differences?
 
 The built-in Web Search component uses DuckDuckGo in Web mode and does not
 need a separate search-service account for this exercise.
@@ -184,10 +187,11 @@ For a guided example, build an **Interpreting preparation helper**:
    Do not invent speakers, facts, pronunciations or event details.
    ```
 
+![](images/langflow_new_agent.png)
+
 4. Enable **Tool Mode**. In **Edit Tool Actions**, enable the normal-response
-   action, give it the slug `prepare_interpreting`, and describe it as
+   action (here seen as "MY_NEW_AGENT"), change it via the `settings icon` give it the *slug* `prepare_interpreting`, and describe it as
    `Prepare an interpreting checklist and candidate glossary from an event brief`.
-   Disable the structured-response action for this exercise.
 5. Connect its **Toolset** output to the coordinator's **Tools** input.
 6. Append to the coordinator's instructions:
 
@@ -196,6 +200,8 @@ For a guided example, build an **Interpreting preparation helper**:
    complete event brief and return its checklist and open questions.
    Do not run the translation-and-review workflow unless translation is requested.
    ```
+
+![](images/langflow_agent_settings.png)
 
 Test in a new Playground conversation:
 
