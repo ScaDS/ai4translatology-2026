@@ -6,17 +6,17 @@
 
 ## ChatGPT
 
-![](images/wordcloud_chatgpt.png"/>
+![](images/wordcloud_chatgpt.png)
 
 ## Claude
 
-![](images/wordcloud_claude.png"/>
+![](images/wordcloud_claude.png)
 
 ## Gemini
 
-![](images/wordcloud_gemini.png"/>
+![](images/wordcloud_gemini.png)
 
 ## Goole Colab
 
-![](images/wordcloud_gemini.png"/>
+![](images/wordcloud_googlecolab.png)
 
