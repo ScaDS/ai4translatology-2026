@@ -14,9 +14,3 @@ Discuss in the group advantages and disadvantages of the used approach.
 * Is the code available that was used to process the data?
 * If you wanted to perform the same analysis again, would the result look identical?
 
-<details><summary>Spoilers: Screenshots of generated word clouds</summary>
-<img src="images/wordcloud_julius.png"/>
-<img src="images/wordcloud_chatgpt.png"/>
-<img src="images/wordcloud_claude.png"/>
-<img src="images/wordcloud_gemini.png"/>
-</details>

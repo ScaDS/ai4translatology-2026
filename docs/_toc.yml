@@ -13,19 +13,20 @@ parts:
       - file: obsidian-setup.md
       - file: install_python.md
     
-  - caption: Exercises for non-coders
+  - caption: Exercises
     chapters:
     - file: translate_speech.md
-    - file: word-cloud-chat.md
     - file: technical-text-translation.md
-    - file: langflow-workshop.md
-    - file: obsidian-workshop.md
-
-  - caption: Exercises for coders seeking AI-assistance
-    chapters:
+    - file: word-cloud-chat.md
+      sections:
+      - file: word-cloud-chat-solution.md
     - file: word-cloud.ipynb
       sections:
       - file: word-cloud-solution.ipynb
+    - file: langflow-workshop.md
+    - file: obsidian-workshop.md
+
+
     
   - caption: Links
     chapters:
