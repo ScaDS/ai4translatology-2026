@@ -15,8 +15,8 @@ Discuss in the group advantages and disadvantages of the used approach.
 * If you wanted to perform the same analysis again, would the result look identical?
 
 <details><summary>Spoilers: Screenshots of generated word clouds</summary>
-![](images/wordcloud_julius.png)
-![](images/wordcloud_chatgpt.png)
-![](images/wordcloud_claude.png)
-![](images/wordcloud_gemini.png)
+<img src="images/wordcloud_julius.png"/>
+<img src="images/wordcloud_chatgpt.png"/>
+<img src="images/wordcloud_claude.png"/>
+<img src="images/wordcloud_gemini.png"/>
 </details>
