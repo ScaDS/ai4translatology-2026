@@ -2,9 +2,9 @@
 
 This page contains training materials for using Large Language Models for text data analysis and code generation. 
 
-The slides are available for [download](https://doi.org/10.5281/zenodo.23362226) .
+The slides are available for [download](https://doi.org/10.5281/zenodo.23362226).
 
-![](images/docs/images/AI4translatology_v1_en.gif)
+![](images/AI4translatology_v1_en.gif)
 
 ## Target audience
 

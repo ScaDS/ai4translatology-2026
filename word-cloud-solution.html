@@ -443,17 +443,14 @@
   <section class="tex2jax_ignore mathjax_ignore" id="solution-word-clouds-for-python-programmers">
 <h1>(Solution) Word clouds for Python-Programmers<a class="headerlink" href="#solution-word-clouds-for-python-programmers" title="Link to this heading">#</a></h1>
 <p>In this notebook we will instruct an AI-assistant to generate code for us to draw <a class="reference external" href="https://github.com/amueller/word_cloud">Wordcloud plots</a> from a speech given and published by Anthony Albanese MP, Prime Minister of Australia, under <a class="reference external" href="https://pmtranscripts.pmc.gov.au/copyright">CC-BY 4.0</a> license.</p>
-<p>The AI-assistant <a class="reference external" href="https://github.com/haesleinhuepf/bia-bob">Bob</a> is built-in to Jupyter lab and can be instructed by starting a conversation with <code class="docutils literal notranslate"><span class="pre">%%bob</span></code> and then outlining below what needs to be done. Before we can use it, we need to <a class="reference external" href="https://github.com/haesleinhuepf/bia-bob#installation">initialize</a> it. Here we use the LLM-server at the compute center ZIH at University of Technology TU Dresden.</p>
+<p>The AI-assistant <a class="reference external" href="https://github.com/haesleinhuepf/bia-bob">Bob</a> is built-in to Jupyter lab and can be instructed by starting a conversation with <code class="docutils literal notranslate"><span class="pre">%%bob</span></code> and then outlining below what needs to be done. Before we can use it, we need to <a class="reference external" href="https://github.com/haesleinhuepf/bia-bob#installation">initialize</a> it. Here we use the LLM-server at the compute center ZIH at University of Technology TU Dresden. To access it, you will need an API Key, which we shared via the <a class="reference external" href="https://cloud.scadsai.uni-leipzig.de/index.php/s/Egy8BGX4wAX4dXH">nextcloud</a>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># load secret API key. You must unpack the contents of api_key.zip </span>
-<span class="c1"># into the same folder before going ahead.</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">dotenv</span><span class="w"> </span><span class="kn">import</span> <span class="n">load_dotenv</span>
-<span class="n">load_dotenv</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">api_key</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
 
 <span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">bia_bob</span><span class="w"> </span><span class="kn">import</span> <span class="n">bob</span>
-<span class="n">bob</span><span class="o">.</span><span class="n">initialize</span><span class="p">(</span><span class="n">endpoint</span><span class="o">=</span><span class="s1">'https://llm.scads.ai/v1'</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s1">'openai/gpt-oss-120b'</span><span class="p">,</span> <span class="n">api_key</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'SCADSAI_API_KEY'</span><span class="p">))</span>
+<span class="n">bob</span><span class="o">.</span><span class="n">initialize</span><span class="p">(</span><span class="n">endpoint</span><span class="o">=</span><span class="s1">'https://llm.scads.ai/v1'</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s1">'openai/gpt-oss-120b'</span><span class="p">,</span> <span class="n">api_key</span><span class="o">=</span><span class="n">api_key</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
