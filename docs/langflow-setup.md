@@ -58,6 +58,22 @@ bash setup.sh
 ```
 
 Wait until **Setup complete** appears.
+To delete the setup and langflow after the workshop, delete folders here:
+
+**Windows:**
+
+```text
+C:\Users\<yourUser>\AppData\Local\ai4t
+```
+
+Maybe you have to make the folder "Appdata" visible via folder-settings.
+
+**macOS / Linux:**
+
+```text
+<yourWorkshopFolder>\ai4t
+```
+
 
 ## 4. Start and import the prepared flow
 
