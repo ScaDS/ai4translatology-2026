@@ -10,9 +10,9 @@ and follow the installer's instructions.
 
 ## 2. Open the prepared vault
 
-Download and extract the vault from [Nextcloud](https://cloud.scadsai.uni-leipzig.de/index.php/s/Egy8BGX4wAX4dXH).
-The password is in the preparation email; the link is valid until **31.12.2026**. The workshop API-Key expires right after the workshop.
-For using obsidian and the copilot with your local setup see the **Hint** down below at the end of this page.
+Download and extract the vault from [**here**](ai4translatology-2026\docs\assets\obsidian\ai4translatology-obsidian-vault.zip).
+For the workshop we'll use an API key for `llm.scads.ai` and *opencode** as agent harness in the Obsidian-Coilot. For using it afterwards or with your local setup see the **Hint** down below at the end of this page.
+For further information see the [Obsidian-Copilot-Documentation](https://docs.obsidiancopilot.com/getting-started/). 
 
 In Obsidian, choose **Open folder as vault** and select the extracted folder
 `ai4translatology-obsidian-vault`. Keep the included `.obsidian` and all other folders- these include the prepared setting. Follow any

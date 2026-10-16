@@ -22,8 +22,19 @@ Close and reopen the terminal, then check:
 uv --version
 ```
 
-## 2. Download the scripts
+## 2. Download the prepared scripts 
 
+**Hint:** If you're not familiar with *Python* see the scripts below. If you're familiar with *Python* and *uv* you can use the following commands to install and start langflow in a prepared folder e.g. on your *Desktop* named `ai4translatology-langflow` and open PowerShell / Terminal in that folder (e.g. Windows use right-click and find the menu-entry "Open Terminal"):
+
+```text
+uv venv
+uv pip install langflow
+uv run langflow run
+```
+
+More information in the [langflow-documentation](https://docs.langflow.org/get-started-installation).
+
+If you are new to the whole topic of *Python*, Programming etc. you can use prepared scripts.
 Save both scripts for your operating system in a folder named
 `ai4translatology-langflow` and open PowerShell / Terminal in that folder.
 
@@ -47,8 +58,26 @@ bash setup.sh
 ```
 
 Wait until **Setup complete** appears.
+To delete the setup and langflow after the workshop, delete folders here:
+
+**Windows:**
+
+```text
+C:\Users\<yourUser>\AppData\Local\ai4t
+```
+
+Maybe you have to make the folder "Appdata" visible via folder-settings.
+
+**macOS / Linux:**
+
+```text
+<yourWorkshopFolder>\ai4t
+```
+
 
 ## 4. Start and import the prepared flow
+
+In the project folder (`ai4translatology-langflow`) open a terminal or use the one already opened: 
 
 **Windows:**
 
@@ -62,18 +91,19 @@ powershell -ExecutionPolicy Bypass -File .\start.ps1
 bash start.sh
 ```
 
-Keep the terminal open and open <http://127.0.0.1:7860> (or the address printed
+**Keep the terminal open** (closing stops langflow!) and open <http://127.0.0.1:7860> (or the address printed
 in the terminal). When asked on the startpage click `Create First Flow` and afterwards close this empty flow as you click on `Starter Project` (on top of the page in the middle). You should be in project view now. In general you dan also click the icon on the top left corner (Langflow Logo) to go back to project or startpage view.
 
-Download `langflow-workshop.json` from [Nextcloud](https://cloud.scadsai.uni-leipzig.de/index.php/s/Egy8BGX4wAX4dXH).
-The password is in the preparation email; the link is valid until **31.12.2026**.
-The workshop API key expires after the workshop. For using it with your local setup see the **Hint** down below at the end of this page.
+Download `langflow-workshop.json` from [**here**](ai4translatology-2026\docs\assets\langflow\langflow-workshop.json).
+For the workshop we'll use an API key for `llm.scads.ai`. For using it afterwards or with your local setup see the **Hint** down below at the end of this page.
 
-Next is settings: From the startpage/project view in Langflow go to: **Settings (icon in the top right corner) → choose Model Providers → check for vLLM (maybe enable first) → check `base_url` (if empty set `https://llm.scads.ai/v1`) → input the provided API-Key for the workshop (see Nextcloud) → in `Language Models` enable Qwen3.8, Gemma4 and in `Embedding Models` enable Qwen3-Embedding → now you should be ready to go!**
+Next is settings: From the startpage/project view in Langflow go to: **Settings (icon in the top right corner) → choose Model Providers → check for vLLM (maybe enable first) → check `base_url` (if empty set `https://llm.scads.ai/v1` or use your personal endpoint) → input the provided API-Key for the workshop → in `Language Models` enable your respective models → now you should be ready to go!**
+
+If you need more information on configuring langflow with e.g. your local model service (Jan.ai, llama.cpp or else) see the [langflow-documentation](https://docs.langflow.org/get-started-quickstart).
 
 ![](images/langflow_setting_modelprovider.png)
 
-Let's import the prepared setup (`langflow-workshop.json`) and test it, so go back to the startpage of Langflow and: **in Projects → click Upload a flow → select the JSON (`langflow-workshop.json`, the one from Nextcloud)**
+Let's import the prepared setup (`langflow-workshop.json`) and test it, so go back to the startpage of Langflow and: **in Projects → click Upload a flow → select the JSON (`langflow-workshop.json`, the one from the link above which you can find in this repository)**
 
 ![](images/langflow_upload_json.png)
 
