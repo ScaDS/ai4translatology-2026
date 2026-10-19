@@ -94,7 +94,7 @@ bash start.sh
 **Keep the terminal open** (closing stops langflow!) and open <http://127.0.0.1:7860> (or the address printed
 in the terminal). When asked on the startpage click `Create First Flow` and afterwards close this empty flow as you click on `Starter Project` (on top of the page in the middle). You should be in project view now. In general you dan also click the icon on the top left corner (Langflow Logo) to go back to project or startpage view.
 
-Download `langflow-workshop.json` from [**here**](ai4translatology-2026\docs\assets\langflow\langflow-workshop.json).
+Download `langflow-workshop.json` from [**here**](assets/langflow/langflow-workshop.json).
 For the workshop we'll use an API key for `llm.scads.ai`. For using it afterwards or with your local setup see the **Hint** down below at the end of this page.
 
 Next is settings: From the startpage/project view in Langflow go to: **Settings (icon in the top right corner) → choose Model Providers → check for vLLM (maybe enable first) → check `base_url` (if empty set `https://llm.scads.ai/v1` or use your personal endpoint) → input the provided API-Key for the workshop → in `Language Models` enable your respective models → now you should be ready to go!**
@@ -124,5 +124,5 @@ For later sessions, run only the start command. Continue with
 
 **Hint** 
 
-For using the materials after the workshop when the workshop API-Key has expired you could e.g. think of using [Jan.ai](httpos://jan.ai) or any other local llm engine.
+For using the materials after the workshop when the workshop API-Key has expired you could e.g. think of using [Jan.ai](https://jan.ai) or any other local llm engine.
 You can connect Langflow to *Jan.ai*s Local API Server, see the offical docs [here](https://www.jan.ai/docs/desktop/api-server) and follow the instructions. In langflow you'd need to go to settings again and add an `OpenAI Compatible` provider in the Model Provider section. Just add the `base_url` from the *Jan.ai* settings to Langflow and this should be it. In a local setup you shouldn't need an API-Key.
